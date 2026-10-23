@@ -65,6 +65,16 @@ To diagnoza, która pokaże, gdzie sklep realnie traci pieniądze. Bez niej pozo
 
 ## 3. Szybkość — strona główna i karty produktów — P1
 
+**Dane prawdziwych użytkowników (PageSpeed Insights, telefony, 28 dni, stan 23.10.2026) — rozstrzygające:**
+
+| Wskaźnik | Wynik | Norma Google | Ocena |
+|---|---|---|---|
+| LCP (wyświetlenie głównej treści) | 1,6 s | ≤ 2,5 s | dobrze |
+| INP (reakcja na dotyk) | 220 ms | ≤ 200 ms | do poprawy |
+| CLS (przesunięcia układu) | 0,14 | ≤ 0,1 | do poprawy |
+
+Ocena Core Web Vitals: **niezaliczona** (przez INP i CLS). Wniosek o LCP 14,1 s z testu laboratoryjnego nie dotyczy prawdziwych użytkowników; test laboratoryjny pozostaje użyteczny do wykrycia wagi wideo i blokowania przez skrypty.
+
 **Wyniki testu laboratoryjnego (Lighthouse, emulacja telefonu):**
 
 | Strona | Wynik | Wczytanie głównej treści (LCP) | Waga | Blokada skryptów (TBT) |

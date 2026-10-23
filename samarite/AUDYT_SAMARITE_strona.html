@@ -336,7 +336,7 @@ footer{padding-block:48px 64px;color:var(--muted);font-size:14px;border-top:1px 
     </div>
     <div>
       <p class="eyebrow">Najpierw</p>
-      <h3 style="margin-top:8px">Szybkość, cena „0,00”, przekaz, potem dowody z zewnątrz.</h3>
+      <h3 style="margin-top:8px">Cena „0,00”, przekaz, płynność strony, potem dowody z zewnątrz.</h3>
       <ul>
         <li>Najpierw naprawić to, co traci sprzedaż na stronie (A1, A2, A3).</li>
         <li>Potem zbudować źródła, z których AI i Google czerpią rekomendacje (Strategia, filary 4–6).</li>
@@ -466,7 +466,7 @@ footer{padding-block:48px 64px;color:var(--muted);font-size:14px;border-top:1px 
           <li><span><b>Blog:</b> 100 artykułów z autorem, datą, FAQ i linkami do produktów.</span></li>
           <li><span><b>Eksperci:</b> mgr chemii Barbara Zapisek, dr n. med. Marcin Wrona, kosmetolog Wioletta Kaniewska.</span></li>
           <li><span><b>Unikalne treści:</b> „Triki produktowe”, „11 zastosowań” Divine Elixir, darmowy plan pielęgnacji.</span></li>
-          <li><span><b>Technika:</b> boty AI nie są blokowane w robots.txt, serwer odpowiada w 140 ms, SEO strony głównej 100/100.</span></li>
+          <li><span><b>Technika:</b> u prawdziwych użytkowników główna treść w 1,6 s; boty AI nie są blokowane; SEO strony głównej 100/100.</span></li>
         </ul>
       </div>
       <div class="panel">
@@ -482,12 +482,14 @@ footer{padding-block:48px 64px;color:var(--muted);font-size:14px;border-top:1px 
 
     <div class="findings">
       <article class="fd" id="A1">
-        <header><span class="pill p-crit">Krytyczne</span><span class="id">A1 · szybkość</span></header>
-        <h4>Telefon pobiera ciężkie filmy, w tym wersje desktopowe</h4>
-        <div class="ev">Test mobilny Lighthouse: strona główna 35/100
-główna treść (LCP) po 14,1 s, norma Google 2,5 s
-12 plików wideo, 19,4 MB = 90% wagi strony (wykresy niżej)</div>
-        <p class="imp"><b>Wpływ:</b> ryzyko utraty wizyt, także opłaconych reklamą. Test laboratoryjny; dane prawdziwych klientek są w Search Console.</p>
+        <header><span class="pill p-warn">Wysokie</span><span class="id">A1 · szybkość i płynność</span></header>
+        <h4>Core Web Vitals niezaliczone: reakcja na dotyk i przesunięcia układu</h4>
+        <div class="ev">Prawdziwi użytkownicy, telefony, 28 dni (PageSpeed):
+LCP 1,6 s   dobrze     (norma ≤ 2,5 s)
+INP 220 ms  do poprawy (norma ≤ 200 ms)
+CLS 0,14    do poprawy (norma ≤ 0,1)
+Test laboratoryjny: 19,4 MB wideo = 90% wagi strony</div>
+        <p class="imp"><b>Wpływ:</b> strona wyświetla się szybko, ale wolno reaguje na dotyk, a elementy przesuwają się podczas wczytywania. Klientka może kliknąć nie to, co chciała. Ciężkie wideo kosztuje transfer danych na telefonie.</p>
       </article>
       <article class="fd" id="A2">
         <header><span class="pill p-crit">Pilne</span><span class="id">A2 · ceny</span></header>
@@ -548,28 +550,22 @@ porady dla 7 typów skóry ukryte w zakładkach</div>
     <div class="figrow">
       <figure class="fig">
         <figcaption>
-          <p class="eyebrow">A1 · wykres 1</p>
-          <h3>Czas do wyświetlenia głównej treści</h3>
-          <p>Test mobilny Lighthouse z 23.10.2026. Norma Google: 2,5 s.</p>
+          <p class="eyebrow">A1 · wykres 1 · prawdziwi użytkownicy</p>
+          <h3>Core Web Vitals strony głównej na telefonach</h3>
+          <p>Dane z Chrome z ostatnich 28 dni (PageSpeed Insights, 23.10.2026). Jasnozielone pole to norma Google.</p>
         </figcaption>
-        <svg viewBox="0 0 640 210" role="img" aria-label="Strona główna 14,1 s, karta Divine Cream 5,4 s, norma 2,5 s" style="width:100%;height:auto;display:block">
-          <line x1="140" y1="20" x2="140" y2="170" class="gl" stroke-width="1"/>
-          <line x1="296.7" y1="20" x2="296.7" y2="170" class="gl" stroke-width="1"/>
-          <line x1="453.3" y1="20" x2="453.3" y2="170" class="gl" stroke-width="1"/>
-          <line x1="610" y1="20" x2="610" y2="170" class="gl" stroke-width="1"/>
-          <text x="140" y="192" font-size="12" text-anchor="middle" class="mut">0 s</text>
-          <text x="296.7" y="192" font-size="12" text-anchor="middle" class="mut">5 s</text>
-          <text x="453.3" y="192" font-size="12" text-anchor="middle" class="mut">10 s</text>
-          <text x="610" y="192" font-size="12" text-anchor="middle" class="mut">15 s</text>
-          <rect x="140" y="38" width="441.8" height="40" rx="4" style="fill:var(--crit)"/>
-          <text x="128" y="63" font-size="14" text-anchor="end" font-weight="600">Strona główna</text>
-          <text x="571" y="63" font-size="14" text-anchor="end" font-weight="700" style="fill:var(--surface)">14,1 s</text>
-          <rect x="140" y="104" width="169.2" height="40" rx="4" style="fill:var(--warn)"/>
-          <text x="128" y="129" font-size="14" text-anchor="end" font-weight="600">Divine Cream</text>
-          <text x="318" y="129" font-size="14" font-weight="700">5,4 s</text>
-          <line x1="218.3" y1="22" x2="218.3" y2="168" stroke-width="2" stroke-dasharray="5 4" style="stroke:var(--ok)"/>
-          <text x="224" y="20" font-size="12" font-weight="600" style="fill:var(--ok)">norma 2,5 s</text>
-        </svg>
+        <div style="display:grid;gap:18px">
+          <div><div style="display:flex;justify-content:space-between;gap:8px;font-size:14px;flex-wrap:wrap"><b>LCP · wyświetlenie głównej treści</b><span class="mono" style="color:var(--ok)">1,6 s · dobrze</span></div>
+            <div style="position:relative;height:14px;border-radius:999px;background:var(--line);margin-top:8px"><span style="position:absolute;left:0;top:0;bottom:0;width:62.5%;background:var(--ok-soft);border-radius:999px"></span><span style="position:absolute;left:0;top:3px;height:8px;width:40%;background:var(--ok);border-radius:999px"></span></div>
+            <div class="mono" style="display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:4px"><span>0</span><span>norma 2,5 s</span><span>4 s</span></div></div>
+          <div><div style="display:flex;justify-content:space-between;gap:8px;font-size:14px;flex-wrap:wrap"><b>INP · reakcja na dotyk</b><span class="mono" style="color:var(--warn)">220 ms · do poprawy</span></div>
+            <div style="position:relative;height:14px;border-radius:999px;background:var(--line);margin-top:8px"><span style="position:absolute;left:0;top:0;bottom:0;width:40%;background:var(--ok-soft);border-radius:999px"></span><span style="position:absolute;left:0;top:3px;height:8px;width:44%;background:var(--warn);border-radius:999px"></span></div>
+            <div class="mono" style="display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:4px"><span>0</span><span>norma 200 ms</span><span>500 ms</span></div></div>
+          <div><div style="display:flex;justify-content:space-between;gap:8px;font-size:14px;flex-wrap:wrap"><b>CLS · przesunięcia układu</b><span class="mono" style="color:var(--warn)">0,14 · do poprawy</span></div>
+            <div style="position:relative;height:14px;border-radius:999px;background:var(--line);margin-top:8px"><span style="position:absolute;left:0;top:0;bottom:0;width:40%;background:var(--ok-soft);border-radius:999px"></span><span style="position:absolute;left:0;top:3px;height:8px;width:56%;background:var(--warn);border-radius:999px"></span></div>
+            <div class="mono" style="display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:4px"><span>0</span><span>norma 0,1</span><span>0,25</span></div></div>
+        </div>
+        <p class="mono" style="margin-top:16px;color:var(--muted)">Test laboratoryjny (Lighthouse, symulowane wolne łącze) pokazał LCP 14,1 s. Prawdziwi użytkownicy mają 1,6 s, więc rozstrzygają dane z Chrome. Test laboratoryjny dobrze pokazuje za to wagę wideo i blokowanie przez skrypty (3,2 s), co tłumaczy wolną reakcję na dotyk.</p>
       </figure>
       <figure class="fig">
         <figcaption>
@@ -636,8 +632,8 @@ porady dla 7 typów skóry ukryte w zakładkach</div>
         <div class="task" data-owner="Właścicielka"><input type="checkbox" id="t1" aria-labelledby="t1l"><div><div class="t" id="t1l">Przejść zakup na 2–3 telefonach (iOS i Android) <a class="ref" href="#audyt">A9</a></div><dl><dt>Gdzie</dt><dd>Wariant → koszyk → kod rabatowy → dostawa → płatność</dd><dt>Zrobione</dt><dd>Lista błędów albo potwierdzenie, że zakup działa na obu systemach</dd></dl><div class="who"><span>Właścicielka</span></div></div></div>
         <div class="task" data-owner="Marketing"><input type="checkbox" id="t2" aria-labelledby="t2l"><div><div class="t" id="t2l">Porównać zamówienia z panelu sklepu z GA4 i zbudować lejek <a class="ref" href="#audyt">A9</a></div><dl><dt>Gdzie</dt><dd>GA4 i panel sklepu, według urządzeń i źródeł ruchu</dd><dt>Zrobione</dt><dd>Lejek wejście → karta → koszyk → zakup; różnice panel/GA4 wyjaśnione</dd></dl><div class="who"><span>Marketing</span></div></div></div>
         <div class="task" data-owner="Developer Prawnik"><input type="checkbox" id="t3" aria-labelledby="t3l"><div><div class="t" id="t3l">Usunąć „0,00” przy 5 zestawach <a class="ref" href="#A2">A2</a></div><dl><dt>Gdzie</dt><dd>Listing, karty, koszyk. Najpierw historia cen i rodzaj promocji; nie wpisywać przypadkowej kwoty.</dd><dt>Zrobione</dt><dd>Żaden zestaw nie pokazuje „0,00”; komunikat zatwierdzony przez prawnika</dd></dl><div class="who"><span>Developer</span><span>Prawnik</span></div></div></div>
-        <div class="task" data-owner="Developer"><input type="checkbox" id="t4" aria-labelledby="t4l"><div><div class="t" id="t4l">Ustalić element LCP strony głównej i karty Divine Cream <a class="ref" href="#A1">A1</a></div><dl><dt>Gdzie</dt><dd>PageSpeed Insights, Chrome DevTools → Performance</dd><dt>Zrobione</dt><dd>Nazwany element i przyczyna opóźnienia dla obu stron</dd></dl><div class="who"><span>Developer</span></div></div></div>
-        <div class="task" data-owner="Developer"><input type="checkbox" id="t5" aria-labelledby="t5l"><div><div class="t" id="t5l">Odchudzić filmy na stronie głównej <a class="ref" href="#A1">A1</a></div><dl><dt>Gdzie</dt><dd>4 pliki z wykresu 2: MP4/WebM do ok. 1–1,5 MB; na telefonie tylko wersje mobilne; obraz zastępczy; filmy poniżej pierwszego ekranu ładowane po przewinięciu. Elementu LCP nie ładować leniwie.</dd><dt>Zrobione</dt><dd>Nowy pomiar w PageSpeed; po 28 dniach Core Web Vitals w Search Console</dd></dl><div class="who"><span>Developer</span></div></div></div>
+        <div class="task" data-owner="Developer"><input type="checkbox" id="t4" aria-labelledby="t4l"><div><div class="t" id="t4l">Znaleźć przyczyny INP 220 ms i CLS 0,14 <a class="ref" href="#A1">A1</a></div><dl><dt>Gdzie</dt><dd>Chrome DevTools → Performance na telefonie: skrypty zewnętrzne (GTM, gtag), elementy wczytywane później (banery, okno newslettera, zgoda na cookies, opinie)</dd><dt>Zrobione</dt><dd>Lista elementów, które przesuwają układ i blokują reakcję, z poprawkami</dd></dl><div class="who"><span>Developer</span></div></div></div>
+        <div class="task" data-owner="Developer"><input type="checkbox" id="t5" aria-labelledby="t5l"><div><div class="t" id="t5l">Odchudzić filmy na stronie głównej <a class="ref" href="#A1">A1</a></div><dl><dt>Gdzie</dt><dd>4 pliki z wykresu 2: MP4/WebM do ok. 1–1,5 MB; na telefonie tylko wersje mobilne; obraz zastępczy; filmy poniżej pierwszego ekranu ładowane po przewinięciu. Elementu LCP (dziś 1,6 s) nie ładować leniwie, żeby go nie pogorszyć.</dd><dt>Zrobione</dt><dd>Po 28 dniach Core Web Vitals zaliczone w PageSpeed (dane użytkowników)</dd></dl><div class="who"><span>Developer</span></div></div></div>
         <div class="task" data-owner="Marketing"><input type="checkbox" id="t6" aria-labelledby="t6l"><div><div class="t" id="t6l">Przejrzeć Merchant Center <a class="ref" href="#A4">A4</a></div><dl><dt>Gdzie</dt><dd>Odrzucenia, ceny, warianty, EAN, linki do wariantów, program ocen produktów</dd><dt>Zrobione</dt><dd>0 odrzuconych produktów; lista braków EAN i ocen</dd></dl><div class="who"><span>Marketing</span></div></div></div>
         <div class="task" data-owner="Marketing"><input type="checkbox" id="t7" aria-labelledby="t7l"><div><div class="t" id="t7l">Poprawić literówki <a class="ref" href="#A8">A8</a></div><dl><dt>Gdzie</dt><dd>/pl/rytualy, /pl/experts</dd><dt>Zrobione</dt><dd>„RYTUAŁ 8 KROKÓW”, „ekspertów Samarité”</dd></dl><div class="who"><span>Marketing</span></div></div></div>
       </div>
@@ -758,8 +754,8 @@ porady dla 7 typów skóry ukryte w zakładkach</div>
         <tbody>
           <tr><td>Test AI: pytania o kategorię z Samarité</td><td>Test 8 pytań</td><td>Co miesiąc</td><td class="v">0 / 6</td></tr>
           <tr><td>Test AI: pytania o markę ze sklepem samarite.eu</td><td>Test 8 pytań</td><td>Co miesiąc</td><td class="v">0 / 2</td></tr>
-          <tr><td>LCP strony głównej na telefonie</td><td>PageSpeed, Search Console</td><td>Po zmianie, potem co miesiąc</td><td class="v">14,1 s (lab.)</td></tr>
-          <tr><td>LCP karty Divine Cream na telefonie</td><td>PageSpeed, Search Console</td><td>Po zmianie, potem co miesiąc</td><td class="v">5,4 s (lab.)</td></tr>
+          <tr><td>Core Web Vitals strony głównej (telefony, 28 dni)</td><td>PageSpeed, Search Console</td><td>Co miesiąc</td><td class="v">niezaliczone</td></tr>
+          <tr><td>LCP / INP / CLS (telefony, 28 dni)</td><td>PageSpeed, Search Console</td><td>Co miesiąc</td><td class="v">1,6 s / 220 ms / 0,14</td></tr>
           <tr><td>Przychód i liczba zamówień</td><td>Panel sklepu</td><td>Co tydzień</td><td class="v">do uzupełnienia</td></tr>
           <tr><td>Konwersja według urządzenia</td><td>GA4</td><td>Co tydzień</td><td class="v">do uzupełnienia</td></tr>
           <tr><td>Średni koszyk i udział powracających</td><td>Panel sklepu, GA4</td><td>Co miesiąc</td><td class="v">do uzupełnienia</td></tr>
@@ -796,9 +792,9 @@ porady dla 7 typów skóry ukryte w zakładkach</div>
       <h2 id="h-metoda">Metoda, ograniczenia i źródła</h2>
     </div>
     <div class="method">
-      <div class="panel"><h3>Sprawdzone 23.10.2026</h3><ul><li>Test 8 pytań w wyszukiwarce AI Claude</li><li>Kod stron: /pl, Divine Cream (oba warianty), Divine Elixir, Eksperci, Rytuały, Konsultacje, blog</li><li>robots.txt, sitemap.xml (320 adresów), llms.txt, schema.org</li><li>Lighthouse 12.2.1, emulacja telefonu</li><li>Wyszukiwanie: rankingi, opinie, konkurencja</li></ul></div>
+      <div class="panel"><h3>Sprawdzone 23.10.2026</h3><ul><li>Test 8 pytań w wyszukiwarce AI Claude</li><li>Kod stron: /pl, Divine Cream (oba warianty), Divine Elixir, Eksperci, Rytuały, Konsultacje, blog</li><li>robots.txt, sitemap.xml (320 adresów), llms.txt, schema.org</li><li>PageSpeed Insights: dane użytkowników Chrome, 28 dni</li><li>Lighthouse 12.2.1, emulacja telefonu</li><li>Wyszukiwanie: rankingi, opinie, konkurencja</li></ul></div>
       <div class="panel"><h3>Nie sprawdzone</h3><ul><li>Odpowiedzi ChatGPT, Google AI Overviews, Perplexity</li><li>GA4, Search Console, Merchant Center, Google Ads</li><li>Panel sklepu, płatności, marża</li><li>Logi serwera, wolumeny fraz</li></ul><p class="mono" style="margin-top:12px;color:var(--muted)">MB = 1024 KiB.</p></div>
-      <div class="panel"><h3>Korekty wcześniejszych wersji</h3><ul><li>Cena Divine Cream w danych dla Google jest poprawna dla wybranego wariantu.</li><li>Wśród 4 największych filmów: 3 pliki .mov i 1 .mp4.</li><li>Data zastępcza w mapie strony: 56 z 320 adresów.</li><li>W kodzie karty produktu jest 10 pełnych opinii.</li><li>Uwzględniono drugą opinię (ChatGPT).</li></ul></div>
+      <div class="panel"><h3>Korekty wcześniejszych wersji</h3><ul><li>Cena Divine Cream w danych dla Google jest poprawna dla wybranego wariantu.</li><li>Szybkość: dane prawdziwych użytkowników (LCP 1,6 s) zastąpiły wniosek z testu laboratoryjnego (14,1 s). Problemem są INP i CLS.</li><li>Wśród 4 największych filmów: 3 pliki .mov i 1 .mp4.</li><li>Data zastępcza w mapie strony: 56 z 320 adresów.</li><li>W kodzie karty produktu jest 10 pełnych opinii.</li><li>Uwzględniono drugą opinię (ChatGPT).</li></ul></div>
     </div>
     <ul class="src">
       <li><a href="https://samarite.eu/pl" target="_blank" rel="noopener">samarite.eu/pl</a> · <a href="https://samarite.eu/pl/product/divine-cream" target="_blank" rel="noopener">Divine Cream</a> · <a href="https://samarite.eu/pl/product/divine-cream?v=793" target="_blank" rel="noopener">45 ml</a></li>
@@ -818,7 +814,7 @@ porady dla 7 typów skóry ukryte w zakładkach</div>
 </main>
 
 <footer>
-  <div class="wrap">Audyt przygotowany 23.10.2026 na podstawie publicznie dostępnej strony samarite.eu, testu w wyszukiwarce AI i źródeł zewnętrznych. Wyniki szybkości pochodzą z testu laboratoryjnego. Kwestie prawne wymagają potwierdzenia przez prawnika.</div>
+  <div class="wrap">Audyt przygotowany 23.10.2026 na podstawie publicznie dostępnej strony samarite.eu, testu w wyszukiwarce AI i źródeł zewnętrznych. Szybkość: dane użytkowników Chrome z 28 dni i test laboratoryjny. Kwestie prawne wymagają potwierdzenia przez prawnika.</div>
 </footer>
 
 <script>
