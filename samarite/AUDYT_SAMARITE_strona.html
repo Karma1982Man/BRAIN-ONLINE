@@ -259,18 +259,38 @@ footer{padding-block:48px 64px;color:var(--muted);font-size:14px;border-top:1px 
   .ring .tk{transform-origin:180px 180px;animation:grow .9s cubic-bezier(.2,.7,.2,1) both}
   @keyframes grow{from{opacity:.25}to{opacity:1}}
 }
+
+/* v4 additions */
+.score{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin-top:6px}
+.score div{border-radius:10px;padding:12px 8px;text-align:center;display:grid;gap:4px;font-size:12px;line-height:1.3}
+.score b{font-family:var(--f-display);font-size:26px;line-height:1}
+.s-no{background:var(--crit-soft);color:var(--crit)}
+.s-weak{background:var(--warn-soft);color:var(--warn)}
+.aikpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:20px}
+.aikpi div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:6px}
+.aikpi b{font-family:var(--f-display);font-size:44px;line-height:1;font-weight:600}
+.aikpi span{color:var(--muted);font-size:14px}
+.res td:nth-child(2){white-space:nowrap}
+.res small{display:block;color:var(--muted);font-size:12.5px;margin-top:4px}
+.gap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}
+.gap div{background:var(--sage-soft);border-radius:12px;padding:16px 18px;display:grid;gap:4px}
+.gap b{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+.gap span{font-family:var(--f-display);font-size:20px;font-weight:600;line-height:1.25}
+.ref{font-family:var(--f-mono);font-size:11.5px;padding:2px 8px;border-radius:999px;background:var(--chaber-soft);color:var(--chaber);text-decoration:none;white-space:nowrap}
+@media (max-width:760px){.score{grid-template-columns:repeat(4,minmax(0,1fr))}.aikpi,.gap{grid-template-columns:minmax(0,1fr)}
+.tbl table.res{min-width:0}.res thead{display:none}.res tr{display:grid;gap:6px;padding:14px 16px;border-bottom:1px solid var(--line)}.res td{display:block;padding:0;border:0}.res td:first-child{font-weight:600}.res td:nth-child(4){font-family:var(--f-mono);font-size:12px;color:var(--muted)}}
 </style>
 
 <nav class="top" aria-label="Sekcje raportu">
   <div class="wrap">
     <a class="brand" href="#top">Samarité · audyt</a>
     <div class="links">
-      <a href="#audyt">Audyt</a>
-      <a href="#ai">Google i AI</a>
+      <a href="#ai">Test AI</a>
+      <a href="#audyt">Problemy</a>
       <a href="#naprawa">Plan naprawy</a>
       <a href="#strategia">Strategia</a>
       <a href="#pomiar">Pomiar</a>
-      <a href="#metoda">Metoda i źródła</a>
+      <a href="#metoda">Metoda</a>
     </div>
   </div>
 </nav>
@@ -279,12 +299,12 @@ footer{padding-block:48px 64px;color:var(--muted);font-size:14px;border-top:1px 
   <div class="wrap">
     <div>
       <p class="eyebrow">Audyt marki · samarite.eu · 23.10.2026</p>
-      <h1>Klientki kochają produkt. <em>Strona</em> jeszcze go nie sprzedaje.</h1>
-      <p class="lead">Audyt sklepu samarite.eu pod jeden cel: więcej sprzedaży przez własną stronę, lepsza widoczność w Google i większa szansa na polecenia przez AI. Najpierw diagnoza na jednej stronie, potem plan naprawy i strategia na 6 miesięcy.</p>
+      <h1>Klientki kochają produkt. <em>Internet</em> jeszcze o nim nie wie.</h1>
+      <p class="lead">Audyt pod jeden cel: więcej sprzedaży przez samarite.eu. Najpierw test, jak AI widzi markę, potem problemy strony, plan naprawy i strategia na 6 miesięcy. Każdy problem opisany jest raz; plan i strategia odsyłają do niego po kodzie (A1, A2…).</p>
       <div class="meta">
         <span><b>Cel:</b> sprzedaż na samarite.eu</span>
-        <span><b>Zakres:</b> strona, Google, AI, konkurencja</span>
-        <span><b>Wersja:</b> 3 (po drugiej opinii)</span>
+        <span><b>Zakres:</b> AI, Google, strona, konkurencja</span>
+        <span><b>Wersja:</b> 4</span>
       </div>
     </div>
     <div class="ring" aria-label="Ocena produktów w sklepie: 4,94 na 5 z 2096 opinii">
@@ -307,141 +327,187 @@ footer{padding-block:48px 64px;color:var(--muted);font-size:14px;border-top:1px 
   <div class="verdict">
     <div>
       <p class="eyebrow">Werdykt</p>
-      <h3 style="margin-top:8px">Fundament marki jest mocny: produkt, opinie, eksperci, treści.</h3>
+      <h3 style="margin-top:8px">Marka ma kapitał, którego nie widać poza jej stroną.</h3>
       <ul>
-        <li>2096 opinii ze średnią 4,94/5 i 100 artykułów z autorem to kapitał, którego większość konkurentów nie ma.</li>
-        <li>Eksperci z nazwiska: technolog, lekarz, kosmetolog. To rzadkość w polskich markach naturalnych.</li>
+        <li><b>Mocne:</b> 4,94/5 z 2096 opinii, 100 artykułów z autorem, eksperci z nazwiska.</li>
+        <li><b>Test AI:</b> 0 z 6 pytań o kategorię wymienia Samarité. Na „gdzie kupić” nie pada samarite.eu.</li>
       </ul>
     </div>
     <div>
-      <p class="eyebrow">Co trzeba naprawić najpierw</p>
-      <h3 style="margin-top:8px">Szybkość na telefonie, cena „0,00” i sprzeczny przekaz.</h3>
+      <p class="eyebrow">Najpierw</p>
+      <h3 style="margin-top:8px">Szybkość, cena „0,00”, przekaz, potem dowody z zewnątrz.</h3>
       <ul>
-        <li>Strona główna w teście na telefonie: 35/100, główna treść po 14,1 s. Ponad 90% wagi strony to wideo.</li>
-        <li>Strona mówi jednocześnie „mniej kosmetyków” i „rytuał 8 kroków”. Klientka i AI dostają dwie definicje marki.</li>
+        <li>Najpierw naprawić to, co traci sprzedaż na stronie (A1, A2, A3).</li>
+        <li>Potem zbudować źródła, z których AI i Google czerpią rekomendacje (Strategia, filary 4–6).</li>
       </ul>
     </div>
   </div>
 
-  <!-- ===================== AUDYT ===================== -->
-  <section id="audyt" aria-labelledby="h-audyt">
+  <!-- ===================== TEST AI ===================== -->
+  <section id="ai" aria-labelledby="h-ai">
     <div class="sec-head">
       <p class="eyebrow">Część 1</p>
-      <h2 id="h-audyt">Audyt na jednej stronie</h2>
-      <p class="lead">Stan ośmiu obszarów, które decydują o sprzedaży i widoczności. Każda ocena opiera się na sprawdzeniu strony 23.10.2026. Gdzie brakuje danych, piszemy to wprost.</p>
+      <h2 id="h-ai">Jak AI widzi Samarité: test</h2>
+      <p class="lead">8 pytań, jakie zadaje klientka. Każde przepuszczone 23.10.2026 przez wyszukiwarkę AI Claude (wyszukiwanie w sieci i streszczenie odpowiedzi). Zapisaliśmy, czy pada Samarité, kogo AI poleca i na jakie źródła się powołuje.</p>
     </div>
 
-    <div class="board">
-      <article class="st"><span class="pill p-ok">Mocna strona</span><h4>Opinie klientek</h4><p>4,94/5 z 2096 opinii w sklepie. Wizaż: 4,5/5 z ok. 407 opinii.</p></article>
-      <article class="st"><span class="pill p-ok">Dobry fundament</span><h4>Treści i eksperci</h4><p>100 artykułów z autorem, datą i FAQ. Technolog, lekarz i kosmetolog z nazwiska.</p></article>
-      <article class="st"><span class="pill p-crit">Krytyczne</span><h4>Szybkość na telefonie</h4><p>Strona główna 35/100, główna treść po 14,1 s, 21,4 MB.</p></article>
-      <article class="st"><span class="pill p-crit">Pilne</span><h4>Ceny zestawów</h4><p>„Najniższa cena z 30 dni: 0,00” przy 5 zestawach.</p></article>
-      <article class="st"><span class="pill p-warn">Do decyzji</span><h4>Przekaz marki</h4><p>„Mniej kosmetyków” kontra „rytuał 8 kroków”.</p></article>
-      <article class="st"><span class="pill p-warn">Do poprawy</span><h4>Dane produktów dla Google</h4><p>Opis jako lista fraz, brak EAN w kodzie, jeden adres dla dwóch wariantów.</p></article>
-      <article class="st"><span class="pill p-none">Brak danych</span><h4>Ścieżka zakupu i marża</h4><p>Wymaga GA4, panelu sklepu i danych o rabatach.</p></article>
-      <article class="st"><span class="pill p-none">Nie zmierzono</span><h4>Widoczność w AI</h4><p>Boty AI mają dostęp. Odpowiedzi ChatGPT i Google jeszcze nie przebadane.</p></article>
+    <figure class="fig" style="margin-top:0">
+      <div class="aikpi">
+        <div><b class="num">0 / 6</b><span>pytań o kategorię (krem 2w1, naturalne premium, słowiańskie, prezent, cera naczynkowa) wymienia Samarité</span></div>
+        <div><b class="num">0 / 2</b><span>pytań o markę wskazuje oficjalny sklep samarite.eu</span></div>
+        <div><b class="num">2</b><span>pomyłki nazwy: L'Occitane Immortelle Divine Cream i paryski dom towarowy Samaritaine</span></div>
+      </div>
+      <div class="score" role="img" aria-label="Wynik 8 pytań: 6 bez Samarité, 2 z marką, ale bez sklepu">
+        <div class="s-no"><b>1</b>krem twarz i oczy</div>
+        <div class="s-no"><b>2</b>naturalne premium</div>
+        <div class="s-no"><b>3</b>dzień i noc</div>
+        <div class="s-no"><b>4</b>prezent dla mamy</div>
+        <div class="s-no"><b>5</b>słowiańskie</div>
+        <div class="s-weak"><b>6</b>opinie o Divine Cream</div>
+        <div class="s-no"><b>7</b>cera naczynkowa</div>
+        <div class="s-weak"><b>8</b>gdzie kupić</div>
+      </div>
+      <p class="mono" style="margin-top:10px;color:var(--muted)">Czerwone: Samarité nie pada. Żółte: marka rozpoznana, ale bez sklepu samarite.eu.</p>
+    </figure>
+
+    <div class="tbl" style="margin-top:24px">
+      <table class="res">
+        <thead><tr><th>Pytanie</th><th>Samarité?</th><th>Co odpowiedziało AI</th><th>Źródła, na które się powołało</th></tr></thead>
+        <tbody>
+          <tr><td>1. Jaki krem do twarzy i pod oczy w jednym polecasz?</td><td><span class="pill p-crit">Nie</span></td><td>Clinique All About Eyes, L'Oréal Revitalift Filler, Bielenda SupremeLab, AA Go Green.<small>AI napisało wprost: nie znalazło rankingu kremów „2 w 1” na twarz i pod oczy.</small></td><td>prorankingi.pl, rankingpro.pl, wizaz.pl, gemini.pl</td></tr>
+          <tr><td>2. Najlepsze polskie kosmetyki naturalne premium?</td><td><span class="pill p-crit">Nie</span></td><td>BognaSkin, Manufaktura Bursztynnika, Herbapol (Polana), Yope, Hagi.<small>AI: brakuje wiarygodnego zestawienia marek premium.</small></td><td>fashionbiznes.pl, wiadomoscikosmetyczne.pl, pepper.pl</td></tr>
+          <tr><td>3. Krem na dzień i na noc w jednym, naturalny skład?</td><td><span class="pill p-crit">Nie</span></td><td>Ziaja Naturalnie, Champs de Provence, Pani Walewska Classic.</td><td>notino.pl, action.com, leki.pl, apteline.pl, wizaz.pl</td></tr>
+          <tr><td>4. Zestaw kosmetyków na prezent dla mamy do 200 zł?</td><td><span class="pill p-crit">Nie</span></td><td>Ogólne porady; Ziaja, Nacomi, Tołpa w Empiku.</td><td>doz.pl, empik.com, fashionbiznes.pl</td></tr>
+          <tr><td>5. Słowiańskie kosmetyki: jaka marka warta uwagi?</td><td><span class="pill p-crit">Nie</span></td><td>Slavica, Bielenda.<small>Marka zbudowana na „słowiańskiej pielęgnacji” nie pada w pytaniu o słowiańskie kosmetyki.</small></td><td>wizaz.pl, en.wikipedia.org, wiadomoscikosmetyczne.pl</td></tr>
+          <tr><td>6. Czy Samarité Divine Cream jest dobry?</td><td><span class="pill p-warn">Słabo</span></td><td>„Opinie mieszane, znalazłem ich niewiele”. Cytuje negatywną opinię o innym produkcie (Divine Skin Perfector SPF 50).<small>Wyniki mieszają się z L'Occitane Immortelle Divine Cream. samarite.eu nie jest źródłem.</small></td><td>wizaz.pl, skinsort.com, gopicky.com, ebay.com, strony o L'Occitane</td></tr>
+          <tr><td>7. Naturalny krem do cery naczynkowej?</td><td><span class="pill p-crit">Nie</span></td><td>BeeHerbs, Natural Way, Fitomed, Celia, Redblocker, Sylveco, Floslek, Tołpa.</td><td>doz.pl, leki.pl, gemini.pl, apteki internetowe</td></tr>
+          <tr><td>8. Gdzie kupić kosmetyki Samarité?</td><td><span class="pill p-warn">Słabo</span></td><td>„Nie znalazłem, gdzie kupić”. Rozpoznaje producenta (Zeme Pharm), myli markę z Samaritaine w Paryżu.<small>Dla celu „sprzedaż na samarite.eu” to najważniejszy wynik testu.</small></td><td>aplikuj.pl, wiadomoscikosmetyczne.pl, france.fr, dfs.com</td></tr>
+        </tbody>
+      </table>
     </div>
 
-    <div class="two">
+    <div class="two" style="margin-top:24px">
       <div class="panel">
-        <h3>Co działa i warto wzmacniać</h3>
+        <h3>Dlaczego AI tak odpowiada</h3>
         <ul class="checks">
-          <li><span><b>Opinie:</b> 4,94/5 z 2096. Ocena jest w danych strukturalnych karty, a 10 pełnych opinii jest w kodzie strony.</span></li>
-          <li><span><b>Blog:</b> 100 artykułów, autor (główny technolog), data, FAQ i linki do produktów.</span></li>
-          <li><span><b>Eksperci:</b> mgr chemii Barbara Zapisek, dr n. med. Marcin Wrona, kosmetolog Wioletta Kaniewska.</span></li>
-          <li><span><b>Unikalne treści:</b> „Triki produktowe”, „11 zastosowań” Divine Elixir, darmowy plan pielęgnacji od kosmetologa.</span></li>
-          <li><span><b>Technika:</b> robots.txt nie blokuje botów AI, serwer odpowiada w 140 ms, SEO strony głównej w Lighthouse 100/100.</span></li>
-          <li><span><b>Offline:</b> butik w Westfield Mokotów, darmowa dostawa w Polsce.</span></li>
+          <li><span><b>AI poleca to, o czym piszą inni.</b> W rankingach, sklepach i portalach, z których korzysta, Samarité prawie nie występuje.</span></li>
+          <li><span><b>Nazwa jest niejednoznaczna.</b> „Divine Cream” ma też L'Occitane, a „Samarite” myli się z Samaritaine. Bez mocnych sygnałów tożsamości AI miesza wyniki.</span></li>
+          <li><span><b>Strona marki nie wraca jako źródło.</b> Nawet na pytanie o zakup AI nie dotarło do samarite.eu.</span></li>
+          <li><span><b>Claude bez wyszukiwania nie znał marki.</b> W tej rozmowie pierwsze wyszukiwanie „Samarite brand” nie znalazło jej wcale.</span></li>
         </ul>
       </div>
       <div class="panel">
-        <h3>Kogo Google i rankingi pokazują zamiast Samarité</h3>
+        <h3>Dwie wolne pozycje, które AI samo wskazało</h3>
+        <div class="gap" style="grid-template-columns:minmax(0,1fr);margin-top:0">
+          <div><b>Pytanie 1</b><span>Brak rankingu kremów „2 w 1” na twarz i pod oczy.</span><small style="color:var(--muted);font-size:13.5px">Divine Cream jest dokładnie takim produktem. Kto pierwszy da AI źródło, ten zajmie tę odpowiedź.</small></div>
+          <div><b>Pytanie 2</b><span>Brak zestawienia polskich marek naturalnych premium.</span><small style="color:var(--muted);font-size:13.5px">Cel dla PR: zestawienie w mediach urodowych, w którym Samarité jest z ekspertami i opiniami.</small></div>
+        </div>
+      </div>
+    </div>
+    <p class="mono" style="margin-top:16px;color:var(--muted)">Ograniczenie: test pokazuje wyszukiwarkę AI Claude. ChatGPT, Google AI Overviews i Perplexity mają własne indeksy i mogą odpowiadać inaczej. Te same 8 pytań warto raz wpisać ręcznie w ChatGPT i Google (lista w części Pomiar), żeby uzupełnić wynik bazowy.</p>
+  </section>
+
+  <!-- ===================== PROBLEMY ===================== -->
+  <section id="audyt" aria-labelledby="h-audyt">
+    <div class="sec-head">
+      <p class="eyebrow">Część 2</p>
+      <h2 id="h-audyt">Problemy na stronie</h2>
+      <p class="lead">Osiem problemów ze sprawdzenia samarite.eu 23.10.2026. Każdy ma kod; plan naprawy odsyła do niego zamiast powtarzać opis.</p>
+    </div>
+
+    <div class="two" style="margin-top:0">
+      <div class="panel">
+        <h3>Co działa i warto wzmacniać</h3>
+        <ul class="checks">
+          <li><span><b>Opinie:</b> 4,94/5 z 2096; ocena w danych strukturalnych, 10 pełnych opinii w kodzie karty.</span></li>
+          <li><span><b>Blog:</b> 100 artykułów z autorem, datą, FAQ i linkami do produktów.</span></li>
+          <li><span><b>Eksperci:</b> mgr chemii Barbara Zapisek, dr n. med. Marcin Wrona, kosmetolog Wioletta Kaniewska.</span></li>
+          <li><span><b>Unikalne treści:</b> „Triki produktowe”, „11 zastosowań” Divine Elixir, darmowy plan pielęgnacji.</span></li>
+          <li><span><b>Technika:</b> boty AI nie są blokowane w robots.txt, serwer odpowiada w 140 ms, SEO strony głównej 100/100.</span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Konkurencja w rankingach</h3>
         <div class="comp">
-          <div><b>Słowiańskie i ziołowe</b><p>Mokosh, Slavia Cosmetics, Polny Warkocz, Kwiat Paproci</p></div>
+          <div><b>Słowiańskie i ziołowe</b><p>Mokosh, Slavia Cosmetics, Slavica, Polny Warkocz, Kwiat Paproci</p></div>
           <div><b>Naturalne anti-aging</b><p>Orientana, Resibo, Iossi, Veoli Botanica</p></div>
           <div><b>Polskie premium</b><p>Dr Irena Eris, Dr Ambroziak</p></div>
-          <div><b>Gdzie</b><p>Zestawienia Elle, Superpharm, natu.care, Wizaż TOP. W sprawdzonych wynikach Samarité nie występuje. <span>Lista z rankingów, nie z danych o udziale w rynku.</span></p></div>
+          <div><b>Gdzie</b><p>Elle, Superpharm, natu.care, Wizaż TOP. <span>Lista z rankingów, nie z danych o udziale w rynku.</span></p></div>
         </div>
       </div>
     </div>
 
     <div class="findings">
-      <article class="fd">
+      <article class="fd" id="A1">
         <header><span class="pill p-crit">Krytyczne</span><span class="id">A1 · szybkość</span></header>
         <h4>Telefon pobiera ciężkie filmy, w tym wersje desktopowe</h4>
-        <div class="ev">Test mobilny: 12 plików wideo, 19,4 MB
-film-o-marce-baner-desktop.mov   6,1 MB
-baner-bajka-1080x2400-cta.mp4    6,0 MB
-film-koe-desktop.mov             3,6 MB
-film-koe-mobile.mov              3,4 MB</div>
-        <p class="imp"><b>Wpływ:</b> główna treść po 14,1 s przy normie Google 2,5 s. Ryzyko utraty wizyt, także tych opłaconych reklamą. To wynik testu laboratoryjnego; dane prawdziwych klientek są w Search Console.</p>
+        <div class="ev">Test mobilny Lighthouse: strona główna 35/100
+główna treść (LCP) po 14,1 s, norma Google 2,5 s
+12 plików wideo, 19,4 MB = 90% wagi strony (wykresy niżej)</div>
+        <p class="imp"><b>Wpływ:</b> ryzyko utraty wizyt, także opłaconych reklamą. Test laboratoryjny; dane prawdziwych klientek są w Search Console.</p>
       </article>
-      <article class="fd">
+      <article class="fd" id="A2">
         <header><span class="pill p-crit">Pilne</span><span class="id">A2 · ceny</span></header>
         <h4>„Najniższa cena z 30 dni: 0,00” przy zestawach</h4>
         <div class="ev">Mini Basic Set · Holy Grail Set · Anti-Aging Set
-Ready to Go Set · All Set
-widoczne: strona główna, sekcje zestawów na kartach</div>
-        <p class="imp"><b>Wpływ:</b> wiarygodność oferty i ryzyko przy przepisach o informowaniu o obniżkach (Omnibus). Ocenę prawną potwierdzić z prawnikiem.</p>
+Ready to Go Set · All Set</div>
+        <p class="imp"><b>Wpływ:</b> wiarygodność oferty i ryzyko przy przepisach o obniżkach (Omnibus). Ocenę prawną potwierdzić z prawnikiem.</p>
       </article>
-      <article class="fd">
-        <header><span class="pill p-warn">Wysokie</span><span class="id">A3 · przekaz</span></header>
-        <h4>Dwie sprzeczne definicje marki</h4>
-        <div class="ev">/pl        „MNIEJ KOSMETYKÓW, WIĘCEJ MOŻLIWOŚCI”
-&lt;title&gt;   „Słowiańska pielęgnacja w cyklu 8 kroków”
-/pl/rytualy „8 kosmetyków. 8 kroków”</div>
-        <p class="imp"><b>Wpływ:</b> nowa klientka nie wie, od czego zacząć. AI, które streszcza markę, dostaje sprzeczne opisy.</p>
+      <article class="fd" id="A4">
+        <header><span class="pill p-warn">Wysokie</span><span class="id">A4 · dane produktów i marki</span></header>
+        <h4>Google i AI dostają niepełny opis produktów i marki</h4>
+        <div class="ev">Product "description": "krem do twarzy, krem na dzień, …"
+Product "gtin": brak · "offers.url": samarite.eu//pl/… (wspólny dla wariantów)
+Organization: opis po angielsku, bez linków do profili
+Rok założenia: 2019 w danych, „od 8 lat” w tekście</div>
+        <p class="imp"><b>Wpływ:</b> to te dane pomagają odróżnić markę od L'Occitane i Samaritaine (test AI). Ceny wariantów są poprawne: 149,99 zł i 269,99 zł.</p>
       </article>
-      <article class="fd">
-        <header><span class="pill p-warn">Wysokie</span><span class="id">A4 · dane produktów</span></header>
-        <h4>Dane produktów dla Google są niepełne</h4>
-        <div class="ev">"description": "krem do twarzy, krem na dzień, …, dla nastolatków"
-"gtin": brak
-"offers.url": "https://samarite.eu//pl/product/divine-cream"
-  (ten sam dla wariantu 45 ml i Grand 2×45 ml)</div>
-        <p class="imp"><b>Wpływ:</b> słabsze dane dla Zakupów Google i dla AI, które opisuje produkty. Ceny wariantów są poprawne: 149,99 zł (45 ml) i 269,99 zł (Grand).</p>
-      </article>
-      <article class="fd">
+      <article class="fd" id="A5">
         <header><span class="pill p-warn">Średnie</span><span class="id">A5 · rynki</span></header>
         <h4>Google dostaje sprzeczne sygnały o wersjach krajowych</h4>
-        <div class="ev">robots.txt   Disallow: /de/ /at/ /fr/ /it/ … (24 kraje)
+        <div class="ev">robots.txt   Disallow: /de/ /at/ /fr/ … (24 kraje)
 sitemap.xml  48 adresów /de
 hreflang     30 wersji językowych</div>
-        <p class="imp"><b>Wpływ:</b> zablokowane strony nie mogą się pozycjonować. Trzeba zdecydować, które rynki są docelowe.</p>
+        <p class="imp"><b>Wpływ:</b> zablokowane strony nie mogą się pozycjonować. Decyzja: które rynki są docelowe.</p>
       </article>
-      <article class="fd">
+      <article class="fd" id="A6">
         <header><span class="pill p-warn">Średnie</span><span class="id">A6 · wyniki Google</span></header>
         <h4>Tytuły, opisy i nagłówki obniżają klikalność</h4>
-        <div class="ev">„… | Samarité   | Samarite”   (marka 2×, 81 znaków)
-„Sprawdź ofertę naturalnych kosmetyków Samarité!” (szablon na każdej karcie)
-Strona główna: brak H1
-Brak alt: 25 z 52 zdjęć (/pl), 74 ze 131 (Divine Cream)</div>
-        <p class="imp"><b>Do sprawdzenia:</b> Lighthouse po wyrenderowaniu karty Divine Cream nie widzi opisu meta, choć jest w kodzie źródłowym. Potwierdzić w Search Console (Sprawdzenie adresu URL).</p>
+        <div class="ev">„… | Samarité   | Samarite”  (marka 2×, 81 znaków)
+Opis-szablon na każdej karcie: „Sprawdź ofertę…”
+Strona główna bez H1 · brak alt: 25/52 i 74/131 zdjęć</div>
+        <p class="imp"><b>Do sprawdzenia:</b> po wyrenderowaniu karty Divine Cream Lighthouse nie widzi opisu meta, choć jest w kodzie źródłowym.</p>
       </article>
-      <article class="fd">
+      <article class="fd" id="A7">
         <header><span class="pill p-warn">Średnie</span><span class="id">A7 · konsultacje</span></header>
         <h4>Najlepszy wyróżnik działa w 10 dni</h4>
-        <div class="ev">/pl/consultations
-„odeślemy Ci spersonalizowany plan pielęgnacji w ciągu 10 dni”</div>
-        <p class="imp"><b>Wpływ:</b> darmowa porada kosmetologa to mocny argument zakupowy, ale klientka czeka za długo, żeby kupić od razu. Porady według typu skóry są ukryte w zakładkach jednej strony.</p>
+        <div class="ev">/pl/consultations: „plan pielęgnacji w ciągu 10 dni”
+porady dla 7 typów skóry ukryte w zakładkach</div>
+        <p class="imp"><b>Wpływ:</b> darmowa porada kosmetologa przekonuje do zakupu, ale klientka czeka za długo. Typy skóry nie mają własnych podstron.</p>
       </article>
-      <article class="fd">
+      <article class="fd" id="A8">
         <header><span class="pill p-info">Do przeglądu</span><span class="id">A8 · deklaracje i jakość</span></header>
         <h4>Deklaracje bez danych badań i literówki</h4>
         <div class="ev">„JEDYNY KREM … NA ABSOLUTNIE WSZYSTKIE POTRZEBY SKÓRY”
-„100%* Dogłębnie nawilża przez 48h”  (brak liczby badanych)
-„RUTUAŁ 8 KROKÓW”        /pl/rytualy
-„eksperów Samaritè”      /pl/experts</div>
-        <p class="imp"><b>Wpływ:</b> Rozporządzenie (UE) 655/2013 wymaga dowodów dla twierdzeń o działaniu. Literówki na stronach o marce osłabiają wizerunek premium.</p>
+„100%* Dogłębnie nawilża przez 48h” (brak liczby badanych)
+„RUTUAŁ 8 KROKÓW” /pl/rytualy · „eksperów Samaritè” /pl/experts</div>
+        <p class="imp"><b>Wpływ:</b> Rozporządzenie (UE) 655/2013 wymaga dowodów dla twierdzeń o działaniu. Literówki osłabiają wizerunek premium.</p>
+      </article>
+      <article class="fd">
+        <header><span class="pill p-none">Brak danych</span><span class="id">A9 · sprzedaż</span></header>
+        <h4>Ścieżka zakupu, marża i powroty nieznane</h4>
+        <div class="ev">Do sprawdzenia: koszyk i płatność na telefonach, lejek w GA4,
+łączenie rabatów (15% + 2+1 + zestawy), marża, udział powracających</div>
+        <p class="imp"><b>Wpływ:</b> bez tych danych nie wiadomo, gdzie sklep traci najwięcej. To pierwszy krok planu.</p>
       </article>
     </div>
 
     <div class="figrow">
       <figure class="fig">
         <figcaption>
-          <p class="eyebrow">Wykres 1 · test mobilny Lighthouse</p>
+          <p class="eyebrow">A1 · wykres 1</p>
           <h3>Czas do wyświetlenia głównej treści</h3>
-          <p>Norma Google dla dobrego wyniku to 2,5 s. Test laboratoryjny z 23.10.2026, emulacja telefonu.</p>
+          <p>Test mobilny Lighthouse z 23.10.2026. Norma Google: 2,5 s.</p>
         </figcaption>
         <svg viewBox="0 0 640 210" role="img" aria-label="Strona główna 14,1 s, karta Divine Cream 5,4 s, norma 2,5 s" style="width:100%;height:auto;display:block">
           <line x1="140" y1="20" x2="140" y2="170" class="gl" stroke-width="1"/>
@@ -461,17 +527,13 @@ Brak alt: 25 z 52 zdjęć (/pl), 74 ze 131 (Divine Cream)</div>
           <line x1="218.3" y1="22" x2="218.3" y2="168" stroke-width="2" stroke-dasharray="5 4" style="stroke:var(--ok)"/>
           <text x="224" y="20" font-size="12" font-weight="600" style="fill:var(--ok)">norma 2,5 s</text>
         </svg>
-        <table class="mono" style="width:100%;margin-top:14px;border-collapse:collapse;font-size:12.5px">
-          <tr style="color:var(--muted)"><td>Wynik</td><td>Waga</td><td>Blokada skryptów</td><td>Pierwsza treść</td></tr>
-          <tr><td>35 / 47</td><td>21,4 / 9,4 MB</td><td>3,2 / 0,9 s</td><td>1,9 / 3,0 s</td></tr>
-        </table>
       </figure>
       <figure class="fig">
         <figcaption>
-          <p class="eyebrow">Wykres 2 · strona główna na telefonie</p>
-          <h3>Na co idzie waga strony</h3>
+          <p class="eyebrow">A1 · wykres 2</p>
+          <h3>Na co idzie waga strony głównej</h3>
         </figcaption>
-        <div class="bigstat"><b class="num">90%</b><span>wagi strony głównej (19,4 z 21,4 MB) to pliki wideo</span></div>
+        <div class="bigstat"><b class="num">90%</b><span>wagi (19,4 z 21,4 MB) to pliki wideo</span></div>
         <div class="stack" role="img" aria-label="Podział 19,4 MB wideo na pliki">
           <span style="width:31.7%;background:var(--crit)"></span>
           <span style="width:31%;background:var(--chaber)"></span>
@@ -489,11 +551,11 @@ Brak alt: 25 z 52 zdjęć (/pl), 74 ze 131 (Divine Cream)</div>
       </figure>
     </div>
 
-    <figure class="fig" style="margin-top:24px">
+    <figure class="fig" id="A3" style="margin-top:24px">
       <figcaption>
-        <p class="eyebrow">Grafika 3 · przekaz marki</p>
+        <header style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><span class="pill p-warn">Wysokie</span><span class="id mono" style="color:var(--muted)">A3 · przekaz marki</span></header>
         <h3>Strona mówi dwie rzeczy naraz</h3>
-        <p>Obie myśli są dobre. Problem w tym, że stoją obok siebie bez kolejności. Propozycja: jedna obietnica na wejście, druga na pogłębienie.</p>
+        <p>Obie myśli są dobre, ale stoją obok siebie bez kolejności. Nowa klientka nie wie, od czego zacząć, a AI dostaje dwa różne opisy marki. Propozycja: jedna obietnica na wejście, druga na pogłębienie.</p>
       </figcaption>
       <div class="versus">
         <div class="quote"><span class="eyebrow">Strona główna</span><blockquote>Mniej kosmetyków, więcej możliwości.</blockquote><cite>samarite.eu/pl</cite></div>
@@ -501,42 +563,10 @@ Brak alt: 25 z 52 zdjęć (/pl), 74 ze 131 (Divine Cream)</div>
         <div class="quote"><span class="eyebrow">Tytuł strony i Rytuały</span><blockquote>Słowiańska pielęgnacja w cyklu 8 kroków.</blockquote><cite>&lt;title&gt; · samarite.eu/pl/rytualy</cite></div>
       </div>
       <div class="resolve">
-        <div><b>Wejście · nowa klientka</b><span>Jeden krem: twarz i oczy, dzień i noc.</span><small>Divine Cream jako produkt flagowy. Prosta pierwsza decyzja.</small></div>
+        <div><b>Wejście · nowa klientka</b><span>Jeden krem: twarz i oczy, dzień i noc.</span><small>Divine Cream jako produkt flagowy. Zajmuje też wolną pozycję z testu AI (pytanie 1).</small></div>
         <div><b>Pogłębienie · stała klientka</b><span>Rytuał 8 kroków.</span><small>Zestawy, ciało, włosy. Wzrost koszyka i powrotów.</small></div>
       </div>
       <p class="mono" style="margin-top:14px;color:var(--muted)">Decyzja biznesowa należy do właścicielki. To rekomendacja audytu.</p>
-    </figure>
-  </section>
-
-  <!-- ===================== AI ===================== -->
-  <section id="ai" aria-labelledby="h-ai">
-    <div class="sec-head">
-      <p class="eyebrow">Część 2</p>
-      <h2 id="h-ai">Jak Google i AI składają odpowiedź o marce</h2>
-      <p class="lead">ChatGPT, Google AI i Perplexity odpowiadają na podstawie kilku rodzajów źródeł. Nikt nie gwarantuje polecenia. Można natomiast wzmocnić każde źródło, z którego AI korzysta.</p>
-    </div>
-    <figure class="fig">
-      <figcaption>
-        <p class="eyebrow">Grafika 4 · źródła odpowiedzi AI i ich stan dla Samarité</p>
-      </figcaption>
-      <div class="aimap">
-        <div class="col left">
-          <div class="node"><span class="pill p-warn">Częściowo</span><h5>Strona samarite.eu</h5><p>Dobre treści i eksperci. Ciężka na telefonie, sprzeczny przekaz.</p></div>
-          <div class="node"><span class="pill p-warn">Do poprawy</span><h5>Dane produktów</h5><p>schema.org i Merchant Center: opis jako lista fraz, brak EAN w kodzie.</p></div>
-          <div class="node"><span class="pill p-ok">Mocne</span><h5>Opinie</h5><p>4,94/5 z 2096. W kodzie karty produktu jest 10 pełnych opinii.</p></div>
-        </div>
-        <div class="core">
-          <span class="eyebrow">Pytanie klientki do AI</span>
-          <q>Jaki krem do twarzy i pod oczy w jednym polecasz?</q>
-          <small>ChatGPT · Google AI Overviews · Perplexity</small>
-        </div>
-        <div class="col right">
-          <div class="node"><span class="pill p-crit">Słabe</span><h5>Media i rankingi</h5><p>W sprawdzonych zestawieniach (Elle, Superpharm, natu.care) polecani są konkurenci.</p></div>
-          <div class="node"><span class="pill p-crit">Słabe</span><h5>Tożsamość marki</h5><p>Nazwa mylona z Samaritans i Samarią. Wyszukiwanie w Wikidata nie znalazło wpisu marki.</p></div>
-          <div class="node"><span class="pill p-none">Do sprawdzenia</span><h5>Wideo i social</h5><p>Facebook, Instagram, YouTube podlinkowane. TikTok nie jest podlinkowany.</p></div>
-        </div>
-      </div>
-      <p class="mono" style="margin-top:18px;color:var(--muted)">Dostęp botów: identyfikatory OAI-SearchBot, GPTBot, PerplexityBot i Googlebot dostały stronę (kod 200). Test podszywał się pod nazwę bota; dostęp prawdziwych botów potwierdzić w logach serwera. Plik llms.txt istnieje, ale Google nie wymaga specjalnych plików dla AI.</p>
     </figure>
   </section>
 
@@ -545,7 +575,7 @@ Brak alt: 25 z 52 zdjęć (/pl), 74 ze 131 (Divine Cream)</div>
     <div class="sec-head">
       <p class="eyebrow">Część 3</p>
       <h2 id="h-naprawa">Plan naprawy</h2>
-      <p class="lead">22 zadania w trzech etapach. Każde ma miejsce, powód, osobę i warunek „zrobione”. Zaznaczenia zapisują się w tej przeglądarce.</p>
+      <p class="lead">22 zadania w trzech etapach. Powód każdego zadania jest w problemie, do którego odsyła kod. Zaznaczenia zapisują się w tej przeglądarce.</p>
     </div>
 
     <div class="toolbar" role="group" aria-label="Filtr według osoby">
@@ -557,43 +587,43 @@ Brak alt: 25 z 52 zdjęć (/pl), 74 ze 131 (Divine Cream)</div>
       <button class="chip" type="button" data-owner="Prawnik" aria-pressed="false">Prawnik</button>
     </div>
 
-    <div class="phase" data-phase="p1">
+    <div class="phase">
       <div class="phase-head"><div><p class="when">P1 · tydzień 1</p><h3>Zatrzymać utratę sprzedaży i ryzyko</h3></div><div class="prog"><div class="bar"><i></i></div><span class="cnt">0/7</span></div></div>
       <div class="tasks">
-        <div class="task" data-owner="Właścicielka"><input type="checkbox" id="t1" aria-labelledby="t1l"><div><div class="t" id="t1l">Przejść zakup na 2–3 telefonach (iOS i Android)</div><dl><dt>Gdzie</dt><dd>Wybór wariantu → koszyk → kod rabatowy → dostawa → płatność</dd><dt>Dlaczego</dt><dd>Błąd na tym etapie traci klientki gotowe do zakupu. Czy błędy są, nie wiadomo.</dd><dt>Zrobione</dt><dd>Lista błędów albo potwierdzenie, że zakup działa na obu systemach</dd></dl><div class="who"><span>Właścicielka</span></div></div></div>
-        <div class="task" data-owner="Marketing"><input type="checkbox" id="t2" aria-labelledby="t2l"><div><div class="t" id="t2l">Porównać zamówienia z panelu sklepu z GA4 i zbudować lejek</div><dl><dt>Gdzie</dt><dd>GA4 i panel sklepu, podział na urządzenia i źródła ruchu</dd><dt>Dlaczego</dt><dd>Pokazuje, na którym etapie i na jakim urządzeniu odpadają klientki</dd><dt>Zrobione</dt><dd>Lejek wejście → karta → koszyk → zakup; różnice między panelem a GA4 wyjaśnione</dd></dl><div class="who"><span>Marketing</span></div></div></div>
-        <div class="task" data-owner="Developer Prawnik"><input type="checkbox" id="t3" aria-labelledby="t3l"><div><div class="t" id="t3l">Usunąć „Najniższa cena z 30 dni: 0,00” przy 5 zestawach</div><dl><dt>Gdzie</dt><dd>Mini Basic, Holy Grail, Anti-Aging, Ready to Go, All Set: listing, karty, koszyk</dd><dt>Dlaczego</dt><dd>Wiarygodność i przepisy o obniżkach. Najpierw sprawdzić historię cen i rodzaj promocji, nie wpisywać przypadkowej kwoty.</dd><dt>Zrobione</dt><dd>Żaden zestaw nie pokazuje „0,00”; komunikat zatwierdzony przez prawnika</dd></dl><div class="who"><span>Developer</span><span>Prawnik</span></div></div></div>
-        <div class="task" data-owner="Developer"><input type="checkbox" id="t4" aria-labelledby="t4l"><div><div class="t" id="t4l">Ustalić element LCP strony głównej i karty Divine Cream</div><dl><dt>Gdzie</dt><dd>PageSpeed Insights, Chrome DevTools → Performance</dd><dt>Dlaczego</dt><dd>Nie wiadomo, który element opóźnia wyświetlenie. Bez tego optymalizacja to strzał.</dd><dt>Zrobione</dt><dd>Nazwany element i przyczyna opóźnienia dla obu stron</dd></dl><div class="who"><span>Developer</span></div></div></div>
-        <div class="task" data-owner="Developer"><input type="checkbox" id="t5" aria-labelledby="t5l"><div><div class="t" id="t5l">Odchudzić filmy na stronie głównej</div><dl><dt>Gdzie</dt><dd>4 pliki z wykresu 2. MP4 (H.264) lub WebM do ok. 1–1,5 MB każdy; na telefonie tylko wersje mobilne; obraz zastępczy; filmy poniżej pierwszego ekranu ładowane po przewinięciu. Elementu LCP nie ładować leniwie.</dd><dt>Dlaczego</dt><dd>90% wagi strony głównej to wideo</dd><dt>Zrobione</dt><dd>Ponowny pomiar w PageSpeed; po 28 dniach raport Core Web Vitals w Search Console</dd></dl><div class="who"><span>Developer</span></div></div></div>
-        <div class="task" data-owner="Marketing"><input type="checkbox" id="t6" aria-labelledby="t6l"><div><div class="t" id="t6l">Przejrzeć Merchant Center</div><dl><dt>Gdzie</dt><dd>Diagnostyka: odrzucenia, ceny, warianty, EAN, linki do wariantów, program Product Ratings</dd><dt>Dlaczego</dt><dd>Bezpośrednio decyduje o obecności produktów w Zakupach Google. Gwiazdki to możliwość, nie gwarancja.</dd><dt>Zrobione</dt><dd>0 odrzuconych produktów; lista braków EAN i ocen</dd></dl><div class="who"><span>Marketing</span></div></div></div>
-        <div class="task" data-owner="Marketing"><input type="checkbox" id="t7" aria-labelledby="t7l"><div><div class="t" id="t7l">Poprawić literówki na stronach o marce</div><dl><dt>Gdzie</dt><dd>„RUTUAŁ 8 KROKÓW” na /pl/rytualy; „eksperów Samaritè” na /pl/experts</dd><dt>Dlaczego</dt><dd>Strony o marce czytają klientki premium, dziennikarze i AI</dd><dt>Zrobione</dt><dd>„RYTUAŁ 8 KROKÓW”, „ekspertów Samarité”</dd></dl><div class="who"><span>Marketing</span></div></div></div>
+        <div class="task" data-owner="Właścicielka"><input type="checkbox" id="t1" aria-labelledby="t1l"><div><div class="t" id="t1l">Przejść zakup na 2–3 telefonach (iOS i Android) <a class="ref" href="#audyt">A9</a></div><dl><dt>Gdzie</dt><dd>Wariant → koszyk → kod rabatowy → dostawa → płatność</dd><dt>Zrobione</dt><dd>Lista błędów albo potwierdzenie, że zakup działa na obu systemach</dd></dl><div class="who"><span>Właścicielka</span></div></div></div>
+        <div class="task" data-owner="Marketing"><input type="checkbox" id="t2" aria-labelledby="t2l"><div><div class="t" id="t2l">Porównać zamówienia z panelu sklepu z GA4 i zbudować lejek <a class="ref" href="#audyt">A9</a></div><dl><dt>Gdzie</dt><dd>GA4 i panel sklepu, według urządzeń i źródeł ruchu</dd><dt>Zrobione</dt><dd>Lejek wejście → karta → koszyk → zakup; różnice panel/GA4 wyjaśnione</dd></dl><div class="who"><span>Marketing</span></div></div></div>
+        <div class="task" data-owner="Developer Prawnik"><input type="checkbox" id="t3" aria-labelledby="t3l"><div><div class="t" id="t3l">Usunąć „0,00” przy 5 zestawach <a class="ref" href="#A2">A2</a></div><dl><dt>Gdzie</dt><dd>Listing, karty, koszyk. Najpierw historia cen i rodzaj promocji; nie wpisywać przypadkowej kwoty.</dd><dt>Zrobione</dt><dd>Żaden zestaw nie pokazuje „0,00”; komunikat zatwierdzony przez prawnika</dd></dl><div class="who"><span>Developer</span><span>Prawnik</span></div></div></div>
+        <div class="task" data-owner="Developer"><input type="checkbox" id="t4" aria-labelledby="t4l"><div><div class="t" id="t4l">Ustalić element LCP strony głównej i karty Divine Cream <a class="ref" href="#A1">A1</a></div><dl><dt>Gdzie</dt><dd>PageSpeed Insights, Chrome DevTools → Performance</dd><dt>Zrobione</dt><dd>Nazwany element i przyczyna opóźnienia dla obu stron</dd></dl><div class="who"><span>Developer</span></div></div></div>
+        <div class="task" data-owner="Developer"><input type="checkbox" id="t5" aria-labelledby="t5l"><div><div class="t" id="t5l">Odchudzić filmy na stronie głównej <a class="ref" href="#A1">A1</a></div><dl><dt>Gdzie</dt><dd>4 pliki z wykresu 2: MP4/WebM do ok. 1–1,5 MB; na telefonie tylko wersje mobilne; obraz zastępczy; filmy poniżej pierwszego ekranu ładowane po przewinięciu. Elementu LCP nie ładować leniwie.</dd><dt>Zrobione</dt><dd>Nowy pomiar w PageSpeed; po 28 dniach Core Web Vitals w Search Console</dd></dl><div class="who"><span>Developer</span></div></div></div>
+        <div class="task" data-owner="Marketing"><input type="checkbox" id="t6" aria-labelledby="t6l"><div><div class="t" id="t6l">Przejrzeć Merchant Center <a class="ref" href="#A4">A4</a></div><dl><dt>Gdzie</dt><dd>Odrzucenia, ceny, warianty, EAN, linki do wariantów, program ocen produktów</dd><dt>Zrobione</dt><dd>0 odrzuconych produktów; lista braków EAN i ocen</dd></dl><div class="who"><span>Marketing</span></div></div></div>
+        <div class="task" data-owner="Marketing"><input type="checkbox" id="t7" aria-labelledby="t7l"><div><div class="t" id="t7l">Poprawić literówki <a class="ref" href="#A8">A8</a></div><dl><dt>Gdzie</dt><dd>/pl/rytualy, /pl/experts</dd><dt>Zrobione</dt><dd>„RYTUAŁ 8 KROKÓW”, „ekspertów Samarité”</dd></dl><div class="who"><span>Marketing</span></div></div></div>
       </div>
     </div>
 
-    <div class="phase" data-phase="p2">
+    <div class="phase">
       <div class="phase-head"><div><p class="when">P2 · tydzień 2–4</p><h3>Uporządkować dane, ofertę i przekaz</h3></div><div class="prog"><div class="bar"><i></i></div><span class="cnt">0/8</span></div></div>
       <div class="tasks">
-        <div class="task" data-owner="Właścicielka"><input type="checkbox" id="t8" aria-labelledby="t8l"><div><div class="t" id="t8l">Zdecydować o przekazie marki</div><dl><dt>Gdzie</dt><dd>Strona główna, tytuły, bio w social media, materiały PR, opisy u dystrybutorów</dd><dt>Dlaczego</dt><dd>Dziś strona mówi „mniej kosmetyków” i „8 kroków” naraz (grafika 3)</dd><dt>Zrobione</dt><dd>Jedno zdanie definiujące markę, używane identycznie wszędzie</dd></dl><div class="who"><span>Właścicielka</span></div></div></div>
-        <div class="task" data-owner="Developer"><input type="checkbox" id="t9" aria-labelledby="t9l"><div><div class="t" id="t9l">Naprawić dane produktów (schema.org)</div><dl><dt>Gdzie</dt><dd>Wszystkie karty: opis zamiast listy fraz; osobny adres oferty dla każdego wariantu (np. ?v=793); usunąć „//”; marka „Samarité”; EAN, jeśli istnieje</dd><dt>Dlaczego</dt><dd>Z tych danych korzystają Zakupy Google i AI opisujące produkty</dd><dt>Zrobione</dt><dd>Test wyników z elementami rozszerzonymi bez błędów dla każdej karty</dd></dl><div class="who"><span>Developer</span></div></div></div>
-        <div class="task" data-owner="Marketing"><input type="checkbox" id="t10" aria-labelledby="t10l"><div><div class="t" id="t10l">Przepisać tytuły i opisy stron</div><dl><dt>Gdzie</dt><dd>Usunąć podwójną markę i potrójne spacje; tytuły do ok. 60 znaków; unikalny opis każdej karty</dd><dt>Dlaczego</dt><dd>Tytuł i opis decydują, czy ktoś kliknie wynik w Google</dd><dt>Zrobione</dt><dd>Np. „Divine Cream – krem do twarzy i pod oczy, dzień i noc | Samarité”; CTR w Search Console mierzony przed i po</dd></dl><div class="who"><span>Marketing</span></div></div></div>
-        <div class="task" data-owner="Developer Marketing"><input type="checkbox" id="t11" aria-labelledby="t11l"><div><div class="t" id="t11l">Dodać H1 na stronie głównej i opisy zdjęć</div><dl><dt>Gdzie</dt><dd>H1, np. „Samarité – polskie kosmetyki naturalne: krem do twarzy i pod oczy, eliksir, balsam”; alt dla 25 z 52 zdjęć (/pl) i 74 ze 131 (Divine Cream)</dd><dt>Dlaczego</dt><dd>Struktura i opis treści dla Google, AI i czytników ekranu</dd><dt>Zrobione</dt><dd>Lighthouse bez błędu „image-alt”</dd></dl><div class="who"><span>Developer</span><span>Marketing</span></div></div></div>
-        <div class="task" data-owner="Właścicielka Developer"><input type="checkbox" id="t12" aria-labelledby="t12l"><div><div class="t" id="t12l">Zdecydować o rynkach i uspójnić robots.txt, mapę strony i hreflang</div><dl><dt>Gdzie</dt><dd>/robots.txt, /sitemap.xml, znaczniki hreflang</dd><dt>Dlaczego</dt><dd>24 kraje zablokowane, a jednocześnie wskazywane Google</dd><dt>Zrobione</dt><dd>Rynki docelowe otwarte; pozostałe usunięte z mapy i hreflang</dd></dl><div class="who"><span>Właścicielka</span><span>Developer</span></div></div></div>
-        <div class="task" data-owner="Właścicielka"><input type="checkbox" id="t13" aria-labelledby="t13l"><div><div class="t" id="t13l">Policzyć promocje i marżę</div><dl><dt>Gdzie</dt><dd>15% za newsletter, 2+1 (kod TRIO), zestawy, obniżki bestsellerów</dd><dt>Dlaczego</dt><dd>Wysoki przychód nie mówi, czy sprzedaż jest rentowna i czy klientki wracają bez kolejnej zniżki</dd><dt>Zrobione</dt><dd>Marża po rabatach i reklamie; udział nowych i powracających klientek</dd></dl><div class="who"><span>Właścicielka</span></div></div></div>
-        <div class="task" data-owner="Marketing"><input type="checkbox" id="t14" aria-labelledby="t14l"><div><div class="t" id="t14l">Sprawdzić i uzupełnić automatyczne maile i SMS-y</div><dl><dt>Gdzie</dt><dd>Powitanie (kod 15%), porzucony koszyk, instrukcja po zakupie, przypomnienie o uzupełnieniu, prośba o opinię</dd><dt>Dlaczego</dt><dd>Sprzedaż z obecnego ruchu i bazy, bez kosztu reklamy. Obecny stan nieznany.</dd><dt>Zrobione</dt><dd>5 scenariuszy działa; przychód z maili raportowany co miesiąc</dd></dl><div class="who"><span>Marketing</span></div></div></div>
-        <div class="task" data-owner="Właścicielka Prawnik"><input type="checkbox" id="t15" aria-labelledby="t15l"><div><div class="t" id="t15l">Przejrzeć deklaracje z dokumentacją badań</div><dl><dt>Gdzie</dt><dd>Karty produktów: „jedyny”, „absolutnie wszystkie”, „100%* 48h”, „dla skóry wrażliwej”</dd><dt>Dlaczego</dt><dd>Rozporządzenie (UE) 655/2013. Przy każdym „%” podać liczbę osób, czas i rodzaj badania.</dd><dt>Zrobione</dt><dd>Każda deklaracja ma dowód albo została złagodzona</dd></dl><div class="who"><span>Właścicielka</span><span>Prawnik</span></div></div></div>
+        <div class="task" data-owner="Właścicielka"><input type="checkbox" id="t8" aria-labelledby="t8l"><div><div class="t" id="t8l">Zdecydować o przekazie marki <a class="ref" href="#A3">A3</a></div><dl><dt>Gdzie</dt><dd>Strona główna, tytuły, bio, PR, opisy u dystrybutorów</dd><dt>Zrobione</dt><dd>Jedno zdanie o marce, używane identycznie wszędzie</dd></dl><div class="who"><span>Właścicielka</span></div></div></div>
+        <div class="task" data-owner="Developer"><input type="checkbox" id="t9" aria-labelledby="t9l"><div><div class="t" id="t9l">Naprawić dane produktów <a class="ref" href="#A4">A4</a></div><dl><dt>Gdzie</dt><dd>Wszystkie karty: opis zamiast listy fraz, osobny adres każdego wariantu, bez „//”, marka „Samarité”, EAN jeśli istnieje</dd><dt>Zrobione</dt><dd>Test wyników z elementami rozszerzonymi bez błędów</dd></dl><div class="who"><span>Developer</span></div></div></div>
+        <div class="task" data-owner="Marketing"><input type="checkbox" id="t10" aria-labelledby="t10l"><div><div class="t" id="t10l">Przepisać tytuły i opisy stron <a class="ref" href="#A6">A6</a></div><dl><dt>Gdzie</dt><dd>Np. „Divine Cream – krem do twarzy i pod oczy, dzień i noc | Samarité”; unikalny opis każdej karty</dd><dt>Zrobione</dt><dd>CTR w Search Console zmierzony przed i po</dd></dl><div class="who"><span>Marketing</span></div></div></div>
+        <div class="task" data-owner="Developer Marketing"><input type="checkbox" id="t11" aria-labelledby="t11l"><div><div class="t" id="t11l">Dodać H1 na stronie głównej i opisy zdjęć <a class="ref" href="#A6">A6</a></div><dl><dt>Gdzie</dt><dd>H1, np. „Samarité – polskie kosmetyki naturalne: krem do twarzy i pod oczy, eliksir, balsam”; alt zdjęć</dd><dt>Zrobione</dt><dd>Lighthouse bez błędu „image-alt”</dd></dl><div class="who"><span>Developer</span><span>Marketing</span></div></div></div>
+        <div class="task" data-owner="Właścicielka Developer"><input type="checkbox" id="t12" aria-labelledby="t12l"><div><div class="t" id="t12l">Wybrać rynki i uspójnić robots.txt, mapę strony i hreflang <a class="ref" href="#A5">A5</a></div><dl><dt>Gdzie</dt><dd>/robots.txt, /sitemap.xml, hreflang</dd><dt>Zrobione</dt><dd>Rynki docelowe otwarte, pozostałe usunięte z mapy i hreflang</dd></dl><div class="who"><span>Właścicielka</span><span>Developer</span></div></div></div>
+        <div class="task" data-owner="Właścicielka"><input type="checkbox" id="t13" aria-labelledby="t13l"><div><div class="t" id="t13l">Policzyć promocje i marżę <a class="ref" href="#audyt">A9</a></div><dl><dt>Gdzie</dt><dd>15% za newsletter, 2+1 (kod TRIO), zestawy, obniżki</dd><dt>Zrobione</dt><dd>Marża po rabatach i reklamie; udział nowych i powracających klientek</dd></dl><div class="who"><span>Właścicielka</span></div></div></div>
+        <div class="task" data-owner="Marketing"><input type="checkbox" id="t14" aria-labelledby="t14l"><div><div class="t" id="t14l">Sprawdzić i uzupełnić automatyczne maile i SMS-y <a class="ref" href="#audyt">A9</a></div><dl><dt>Gdzie</dt><dd>Powitanie (kod 15%), porzucony koszyk, instrukcja po zakupie, przypomnienie o uzupełnieniu, prośba o opinię</dd><dt>Zrobione</dt><dd>5 scenariuszy działa; przychód z maili raportowany co miesiąc</dd></dl><div class="who"><span>Marketing</span></div></div></div>
+        <div class="task" data-owner="Właścicielka Prawnik"><input type="checkbox" id="t15" aria-labelledby="t15l"><div><div class="t" id="t15l">Przejrzeć deklaracje z dokumentacją badań <a class="ref" href="#A8">A8</a></div><dl><dt>Gdzie</dt><dd>Karty produktów; przy każdym „%” liczba osób, czas, rodzaj badania</dd><dt>Zrobione</dt><dd>Każda deklaracja ma dowód albo została złagodzona</dd></dl><div class="who"><span>Właścicielka</span><span>Prawnik</span></div></div></div>
       </div>
     </div>
 
-    <div class="phase" data-phase="p3">
-      <div class="phase-head"><div><p class="when">P3 · miesiąc 2</p><h3>Zbudować przewagę w Google i AI</h3></div><div class="prog"><div class="bar"><i></i></div><span class="cnt">0/7</span></div></div>
+    <div class="phase">
+      <div class="phase-head"><div><p class="when">P3 · miesiąc 2</p><h3>Dać Google i AI powody, by polecały markę</h3></div><div class="prog"><div class="bar"><i></i></div><span class="cnt">0/7</span></div></div>
       <div class="tasks">
-        <div class="task" data-owner="Developer"><input type="checkbox" id="t16" aria-labelledby="t16l"><div><div class="t" id="t16l">Dodać pełne dane organizacji na stronie głównej</div><dl><dt>Gdzie</dt><dd>Organization: „Samarité”, alternateName „Samarite”, legalName „Zeme Pharm Anna Mrowińska”, polski opis, sameAs → Facebook, Instagram, YouTube; spójna data założenia (dziś 2019 w danych i „od 8 lat” w tekście)</dd><dt>Dlaczego</dt><dd>Nazwa jest mylona z innymi bytami. Google i AI potrzebują jednoznacznego opisu marki.</dd><dt>Zrobione</dt><dd>Walidator schema.org bez błędów</dd></dl><div class="who"><span>Developer</span></div></div></div>
-        <div class="task" data-owner="Developer"><input type="checkbox" id="t17" aria-labelledby="t17l"><div><div class="t" id="t17l">Poprawić daty w mapie strony i dane autorów</div><dl><dt>Gdzie</dt><dd>56 z 320 adresów ma zastępczą datę 2025-01-01; autor artykułów jako „mgr chemii\nBARBARA ZAPISEK -\nGŁÓWNY TECHNOLOG”</dd><dt>Dlaczego</dt><dd>Google używa dat zmian, gdy są wiarygodne. Autor powinien mieć osobno imię i stanowisko.</dd><dt>Zrobione</dt><dd>Prawdziwe daty; name „Barbara Zapisek”, jobTitle „Główny technolog”</dd></dl><div class="who"><span>Developer</span></div></div></div>
-        <div class="task" data-owner="Marketing Developer"><input type="checkbox" id="t18" aria-labelledby="t18l"><div><div class="t" id="t18l">Wyjąć porady według typu skóry na osobne podstrony</div><dl><dt>Gdzie</dt><dd>Zakładki na /pl/consultations: sucha, mieszana, tłusta, dojrzała, naczynkowa, trądzikowa, szara</dd><dt>Dlaczego</dt><dd>Osobne podstrony mogą odpowiadać na zapytania o konkretny typ skóry</dd><dt>Zrobione</dt><dd>7 podstron z linkami do produktów i ekspertów</dd></dl><div class="who"><span>Marketing</span><span>Developer</span></div></div></div>
-        <div class="task" data-owner="Marketing"><input type="checkbox" id="t19" aria-labelledby="t19l"><div><div class="t" id="t19l">Dodać FAQ na kartach produktów</div><dl><dt>Gdzie</dt><dd>Czy można pod oczy (w opiniach są skargi na szczypanie), czy dla cery wrażliwej, czy w ciąży, jak łączyć z Elixirem</dd><dt>Dlaczego</dt><dd>Odpowiada na obawy przed zakupem; AI cytuje jasne odpowiedzi</dd><dt>Zrobione</dt><dd>FAQ na 4 bestsellerach</dd></dl><div class="who"><span>Marketing</span></div></div></div>
-        <div class="task" data-owner="Developer"><input type="checkbox" id="t20" aria-labelledby="t20l"><div><div class="t" id="t20l">Potwierdzić dostęp prawdziwych botów w logach</div><dl><dt>Gdzie</dt><dd>Logi serwera i reguły ochrony (CDN): OAI-SearchBot, PerplexityBot, Googlebot</dd><dt>Dlaczego</dt><dd>Mój test sprawdził tylko nazwę bota, nie jego prawdziwy adres</dd><dt>Zrobione</dt><dd>Wpisy w logach z kodem 200 dla każdego bota</dd></dl><div class="who"><span>Developer</span></div></div></div>
-        <div class="task" data-owner="Marketing"><input type="checkbox" id="t21" aria-labelledby="t21l"><div><div class="t" id="t21l">Przejrzeć 100 artykułów na blogu z danymi Search Console</div><dl><dt>Gdzie</dt><dd>/pl/blog; wyświetlenia, kliknięcia, przejścia do produktów</dd><dt>Dlaczego</dt><dd>Część tematów jest daleko od oferty (np. gojenie tatuażu). Trzeba wiedzieć, co przynosi sprzedaż.</dd><dt>Zrobione</dt><dd>Każdy artykuł oznaczony: zostaje, poprawić, połączyć</dd></dl><div class="who"><span>Marketing</span></div></div></div>
-        <div class="task" data-owner="Marketing"><input type="checkbox" id="t22" aria-labelledby="t22l"><div><div class="t" id="t22l">Zrobić pierwszy test widoczności w AI</div><dl><dt>Gdzie</dt><dd>15 pytań z części „Pomiar” w ChatGPT, Perplexity i Google, każde w nowej rozmowie</dd><dt>Dlaczego</dt><dd>Punkt startowy do mierzenia efektów strategii</dd><dt>Zrobione</dt><dd>Arkusz: data, pytanie, czy Samarité się pojawia, cytowane źródła, wskazany sklep</dd></dl><div class="who"><span>Marketing</span></div></div></div>
+        <div class="task" data-owner="Developer"><input type="checkbox" id="t16" aria-labelledby="t16l"><div><div class="t" id="t16l">Pełne dane organizacji na stronie głównej <a class="ref" href="#A4">A4</a> <a class="ref" href="#ai">Test AI</a></div><dl><dt>Gdzie</dt><dd>„Samarité”, alternateName „Samarite”, legalName „Zeme Pharm Anna Mrowińska”, polski opis, linki do Facebooka, Instagrama, YouTube; spójny rok założenia</dd><dt>Zrobione</dt><dd>Walidator schema.org bez błędów</dd></dl><div class="who"><span>Developer</span></div></div></div>
+        <div class="task" data-owner="Marketing"><input type="checkbox" id="t17" aria-labelledby="t17l"><div><div class="t" id="t17l">Strona „Gdzie kupić Samarité” <a class="ref" href="#ai">Test AI · pyt. 8</a></div><dl><dt>Gdzie</dt><dd>Sklep samarite.eu na pierwszym miejscu, butik Westfield Mokotów, lista autoryzowanych sklepów</dd><dt>Zrobione</dt><dd>Strona zaindeksowana; pytanie 8 w kolejnym teście wskazuje samarite.eu</dd></dl><div class="who"><span>Marketing</span></div></div></div>
+        <div class="task" data-owner="Developer"><input type="checkbox" id="t18" aria-labelledby="t18l"><div><div class="t" id="t18l">Daty w mapie strony i dane autorów <a class="ref" href="#A4">A4</a></div><dl><dt>Gdzie</dt><dd>56 z 320 adresów z datą 2025-01-01; autor jako jedno pole „mgr chemii\nBARBARA ZAPISEK -\nGŁÓWNY TECHNOLOG”</dd><dt>Zrobione</dt><dd>Prawdziwe daty; osobno imię i stanowisko autora</dd></dl><div class="who"><span>Developer</span></div></div></div>
+        <div class="task" data-owner="Marketing Developer"><input type="checkbox" id="t19" aria-labelledby="t19l"><div><div class="t" id="t19l">Podstrony dla 7 typów skóry <a class="ref" href="#A7">A7</a></div><dl><dt>Gdzie</dt><dd>Z zakładek /pl/consultations: sucha, mieszana, tłusta, dojrzała, naczynkowa, trądzikowa, szara</dd><dt>Zrobione</dt><dd>7 podstron z linkami do produktów i ekspertów</dd></dl><div class="who"><span>Marketing</span><span>Developer</span></div></div></div>
+        <div class="task" data-owner="Marketing"><input type="checkbox" id="t20" aria-labelledby="t20l"><div><div class="t" id="t20l">FAQ na kartach produktów <a class="ref" href="#ai">Test AI · pyt. 6</a></div><dl><dt>Gdzie</dt><dd>Czy pod oczy (są skargi na szczypanie), czy dla cery wrażliwej, czy w ciąży, jak łączyć z Elixirem, czym różni się od innych „Divine Cream”</dd><dt>Zrobione</dt><dd>FAQ na 4 bestsellerach</dd></dl><div class="who"><span>Marketing</span></div></div></div>
+        <div class="task" data-owner="Developer"><input type="checkbox" id="t21" aria-labelledby="t21l"><div><div class="t" id="t21l">Potwierdzić dostęp prawdziwych botów w logach <a class="ref" href="#ai">Test AI</a></div><dl><dt>Gdzie</dt><dd>Logi serwera i reguły CDN: OAI-SearchBot, PerplexityBot, Googlebot</dd><dt>Zrobione</dt><dd>Wpisy z kodem 200 dla każdego bota</dd></dl><div class="who"><span>Developer</span></div></div></div>
+        <div class="task" data-owner="Marketing"><input type="checkbox" id="t22" aria-labelledby="t22l"><div><div class="t" id="t22l">Przejrzeć 100 artykułów na blogu z danymi Search Console</div><dl><dt>Gdzie</dt><dd>/pl/blog: wyświetlenia, kliknięcia, przejścia do produktów</dd><dt>Zrobione</dt><dd>Każdy artykuł oznaczony: zostaje, poprawić, połączyć</dd></dl><div class="who"><span>Marketing</span></div></div></div>
       </div>
     </div>
   </section>
@@ -603,27 +633,27 @@ Brak alt: 25 z 52 zdjęć (/pl), 74 ze 131 (Divine Cream)</div>
     <div class="sec-head">
       <p class="eyebrow">Część 4</p>
       <h2 id="h-strategia">Strategia na 6 miesięcy</h2>
-      <p class="lead">Najpierw sprawny sklep, potem więcej ruchu. Ruch kierowany na wolną stronę ze sprzecznym przekazem to przepalony budżet.</p>
+      <p class="lead">Plan naprawy usuwa przeszkody. Strategia buduje to, czego dziś brakuje: powody, dla których Google, AI i klientki wybiorą Samarité. Najpierw sprawny sklep, potem więcej ruchu.</p>
     </div>
 
     <div class="thesis">
-      <div><b>Źródło wzrostu 1</b><span>Więcej zamówień z obecnego ruchu</span><p>Szybkość, ścieżka zakupu, jasna oferta i przekaz.</p></div>
-      <div><b>Źródło wzrostu 2</b><span>Więcej powrotów</span><p>Przypomnienia o uzupełnieniu, maile po zakupie, program lojalnościowy.</p></div>
-      <div><b>Źródło wzrostu 3</b><span>Więcej nowego ruchu z Google i AI</span><p>Dowody z zewnątrz, treści, dane produktów, tożsamość marki.</p></div>
+      <div><b>Źródło wzrostu 1</b><span>Więcej zamówień z obecnego ruchu</span><p>Szybka strona, prosta pierwsza decyzja, szybka porada.</p></div>
+      <div><b>Źródło wzrostu 2</b><span>Więcej powrotów</span><p>Uzupełnienia, maile po zakupie, program lojalnościowy.</p></div>
+      <div><b>Źródło wzrostu 3</b><span>Więcej nowego ruchu z Google i AI</span><p>Zajęcie wolnych pozycji z testu AI i dowody z zewnątrz.</p></div>
     </div>
 
     <figure class="fig">
       <figcaption>
-        <p class="eyebrow">Grafika 5 · harmonogram filarów</p>
+        <p class="eyebrow">Harmonogram filarów</p>
         <h3>Co i kiedy</h3>
-        <p>Niebieskie: projekt z końcem. Zielone: praca ciągła. Zasada: najwyżej 3 nowe filary na kwartał.</p>
+        <p>Niebieskie: projekt z końcem. Zielone: praca ciągła. Najwyżej 3 nowe filary na kwartał.</p>
       </figcaption>
       <div class="gantt">
         <table>
           <thead><tr><th>Filar</th><th>Mies. 1</th><th>Mies. 2</th><th>Mies. 3</th><th>Mies. 4</th><th>Mies. 5</th><th>Mies. 6</th></tr></thead>
           <tbody>
             <tr><td class="n">1 · Jedna opowieść marki</td><td class="c on first last"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
-            <tr><td class="n">2 · Sklep, który sprzedaje</td><td class="c on first"></td><td class="c on last"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
+            <tr><td class="n">2 · Sprzedaż na stronie</td><td class="c on first"></td><td class="c on last"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
             <tr><td class="n">3 · Najlepsza odpowiedź w kategorii</td><td class="c"></td><td class="c on first"></td><td class="c on last"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
             <tr><td class="n">4 · Jednoznaczna marka</td><td class="c"></td><td class="c on first"></td><td class="c on last"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
             <tr><td class="n">5 · Zakupy w Google i AI</td><td class="c"></td><td class="c on first"></td><td class="c on last"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
@@ -637,15 +667,15 @@ Brak alt: 25 z 52 zdjęć (/pl), 74 ze 131 (Divine Cream)</div>
     </figure>
 
     <div class="pillars">
-      <article class="pl"><span class="k">Filar 1 · miesiąc 1</span><h4>Jedna opowieść marki</h4><ul><li>Rozstrzygnąć „mniej kosmetyków” kontra „8 kroków” (grafika 3).</li><li>Jedno zdanie o marce, identyczne na stronie, w bio, w PR i u dystrybutorów.</li><li>Wszędzie „Samarité”; poprawić literówki.</li></ul><p class="kpi"><b>Miernik:</b> to samo zdanie we wszystkich kanałach</p></article>
-      <article class="pl"><span class="k">Filar 2 · miesiąc 1–2</span><h4>Sklep, który sprzedaje</h4><ul><li>Zadania P1: ścieżka zakupu, cena „0,00”, filmy, Merchant Center.</li><li>Test wariantu domyślnego Divine Cream: 45 ml za 149,99 zł czy Grand za 269,99 zł.</li><li>Konsultacja z 10 dni do minut: quiz z planem pielęgnacji od razu, kosmetolog dosyła uzupełnienie.</li></ul><p class="kpi"><b>Miernik:</b> konwersja na telefonie, przychód na wizytę</p></article>
-      <article class="pl"><span class="k">Filar 3 · miesiąc 2–3</span><h4>Najlepsza odpowiedź w kategorii</h4><ul><li>Na kartach: streszczenie badań (osoby, czas, metoda), „dla kogo” i „dla kogo nie”, skład z wyjaśnieniem, FAQ.</li><li>„Triki produktowe” i „11 zastosowań” jako osobne podstrony i krótkie filmy.</li><li>7 podstron typów skóry z konsultacji.</li></ul><p class="kpi"><b>Miernik:</b> ruch bezpłatny na karty i podstrony skóry</p></article>
-      <article class="pl"><span class="k">Filar 4 · miesiąc 2–3</span><h4>Jednoznaczna marka</h4><ul><li>Pełne dane organizacji z linkami do profili.</li><li>Strona „O marce”: kto, kiedy, dlaczego (do potwierdzenia z właścicielką).</li><li>Profil Firmy w Google dla butiku w Westfield Mokotów.</li><li>Wpis w Wikidata, jeśli marka spełnia zasady serwisu.</li></ul><p class="kpi"><b>Miernik:</b> panel wiedzy Google przy wyszukaniu marki</p></article>
-      <article class="pl"><span class="k">Filar 5 · miesiąc 2–3</span><h4>Zakupy w Google i AI</h4><ul><li>Pełne dane produktów w Merchant Center: EAN, warianty, oceny, dostawa, zwroty.</li><li>Niezależne opinie o sklepie (np. Google Customer Reviews).</li><li>Programy sprzedawców w ChatGPT i Perplexity: dostępność w Polsce do sprawdzenia.</li></ul><p class="kpi"><b>Miernik:</b> kliknięcia z Zakupów Google</p></article>
-      <article class="pl"><span class="k">Filar 6 · stale od miesiąca 2</span><h4>Dowody z zewnątrz</h4><ul><li>PR do zestawień, w których dziś są konkurenci: Elle, Superpharm, natu.care, Wizaż.</li><li>Nowa edycja testów na Wizażu; testy niezależnych kosmetologów i dermatologów.</li><li>Każda współpraca oznaczona jako współpraca.</li></ul><p class="kpi"><b>Miernik:</b> liczba zestawień z Samarité; test AI</p></article>
-      <article class="pl"><span class="k">Filar 7 · stale od miesiąca 2</span><h4>Powtórne zakupy</h4><ul><li>Przypomnienie lub subskrypcja uzupełnień Divine Cream.</li><li>Instrukcja po zakupie: jak łączyć z Elixirem, triki.</li><li>Prośba o opinię, czyli więcej dowodów dla Google i AI.</li></ul><p class="kpi"><b>Miernik:</b> udział powracających klientek</p></article>
-      <article class="pl"><span class="k">Filar 8 · stale od miesiąca 3</span><h4>Wideo</h4><ul><li>„Triki produktowe” jako Reels, TikTok i YouTube Shorts z opisami zawierającymi frazy.</li><li>Sprawdzić TikTok i podlinkować go na stronie.</li></ul><p class="kpi"><b>Miernik:</b> wejścia na stronę z wideo</p></article>
-      <article class="pl"><span class="k">Filar 9 · miesiąc 4–6</span><h4>Rynki zagraniczne</h4><ul><li>Dziś 30 wersji, większość po angielsku, część zablokowana.</li><li>Wybrać 1–2 rynki, przetłumaczyć porządnie i otworzyć dla Google.</li></ul><p class="kpi"><b>Miernik:</b> sprzedaż z wybranych rynków</p></article>
+      <article class="pl"><span class="k">Filar 1 · miesiąc 1</span><h4>Jedna opowieść marki</h4><ul><li>Na wejście: „jeden krem: twarz i oczy, dzień i noc”. Na pogłębienie: rytuał 8 kroków.</li><li>Zawsze pełna nazwa „Samarité Divine Cream”, żeby nie mylić z L'Occitane.</li></ul><p class="kpi"><b>Miernik:</b> to samo zdanie o marce we wszystkich kanałach</p></article>
+      <article class="pl"><span class="k">Filar 2 · miesiąc 1–2</span><h4>Sprzedaż na stronie</h4><ul><li>Test wariantu domyślnego Divine Cream: 45 ml za 149,99 zł czy Grand za 269,99 zł.</li><li>Konsultacja w minutach zamiast 10 dni: quiz z planem od razu, kosmetolog dosyła uzupełnienie i zbiera zgodę na maile.</li></ul><p class="kpi"><b>Miernik:</b> konwersja na telefonie, przychód na wizytę</p></article>
+      <article class="pl"><span class="k">Filar 3 · miesiąc 2–3</span><h4>Najlepsza odpowiedź w kategorii</h4><ul><li>Poradnik „krem do twarzy i pod oczy w jednym: jak wybrać” (wolna pozycja z testu, pytanie 1).</li><li>Na kartach: streszczenie badań (osoby, czas, metoda), „dla kogo” i „dla kogo nie”.</li><li>„Triki produktowe” i „11 zastosowań” jako osobne podstrony.</li></ul><p class="kpi"><b>Miernik:</b> pytanie 1 w teście AI</p></article>
+      <article class="pl"><span class="k">Filar 4 · miesiąc 2–3</span><h4>Jednoznaczna marka</h4><ul><li>Strona „O marce”: kto, kiedy, dlaczego (do potwierdzenia z właścicielką).</li><li>Profil Firmy w Google dla butiku w Westfield Mokotów.</li><li>Wpis w Wikidata, jeśli marka spełnia zasady serwisu.</li></ul><p class="kpi"><b>Miernik:</b> pytania 6 i 8 bez pomyłek nazwy</p></article>
+      <article class="pl"><span class="k">Filar 5 · miesiąc 2–3</span><h4>Zakupy w Google i AI</h4><ul><li>Niezależne opinie o sklepie (np. Google Customer Reviews).</li><li>Programy sprzedawców w ChatGPT i Perplexity: dostępność w Polsce do sprawdzenia.</li></ul><p class="kpi"><b>Miernik:</b> kliknięcia z Zakupów Google</p></article>
+      <article class="pl"><span class="k">Filar 6 · stale od miesiąca 2</span><h4>Dowody z zewnątrz</h4><ul><li>PR pod dwie wolne pozycje z testu: ranking kremów 2 w 1 i zestawienie polskich marek naturalnych premium.</li><li>Obecność w zestawieniach Elle, Superpharm, natu.care, Wizaż; nowa edycja testów na Wizażu.</li><li>Każda współpraca oznaczona jako współpraca.</li></ul><p class="kpi"><b>Miernik:</b> pytania 1, 2 i 5 w teście AI</p></article>
+      <article class="pl"><span class="k">Filar 7 · stale od miesiąca 2</span><h4>Powtórne zakupy</h4><ul><li>Przypomnienie lub subskrypcja uzupełnień Divine Cream.</li><li>Program lojalnościowy; prośba o opinię po zakupie.</li></ul><p class="kpi"><b>Miernik:</b> udział powracających klientek</p></article>
+      <article class="pl"><span class="k">Filar 8 · stale od miesiąca 3</span><h4>Wideo</h4><ul><li>„Triki produktowe” jako Reels, TikTok i YouTube Shorts, z opisem zawierającym frazy.</li><li>Sprawdzić TikTok i podlinkować go na stronie.</li></ul><p class="kpi"><b>Miernik:</b> wejścia na stronę z wideo</p></article>
+      <article class="pl"><span class="k">Filar 9 · miesiąc 4–6</span><h4>Rynki zagraniczne</h4><ul><li>Po decyzji z zadania t12: 1–2 rynki, porządne tłumaczenie, otwarcie dla Google.</li></ul><p class="kpi"><b>Miernik:</b> sprzedaż z wybranych rynków</p></article>
     </div>
 
     <div class="kw">
@@ -655,20 +685,20 @@ Brak alt: 25 z 52 zdjęć (/pl), 74 ze 131 (Divine Cream)</div>
         <table>
           <thead><tr><th>Grupa</th><th>Przykłady</th><th>Docelowe miejsce</th></tr></thead>
           <tbody>
-            <tr><td>Marka i produkt</td><td>samarite divine cream, samarite opinie, divine cream opinie, samarite skład</td><td>Karta produktu i opinie</td></tr>
+            <tr><td>Marka i produkt</td><td>samarite divine cream, samarite opinie, samarite sklep, samarite gdzie kupić</td><td>Karta produktu, strona „Gdzie kupić”</td></tr>
             <tr><td>Zastosowanie</td><td>krem do twarzy i pod oczy, krem na dzień i na noc w jednym, krem z niacynamidem</td><td>Karta produktu, poradnik wyboru</td></tr>
-            <tr><td>Prezent</td><td>zestaw kosmetyków na prezent, kosmetyki na prezent do 150 zł, prezent dla mamy</td><td>Zestawy, sekcja prezentowa</td></tr>
-            <tr><td>Kategoria</td><td>polskie kosmetyki naturalne, słowiańskie kosmetyki</td><td>Strona marki, treści o ofercie</td></tr>
+            <tr><td>Prezent</td><td>zestaw kosmetyków na prezent, kosmetyki na prezent do 150 zł, prezent dla mamy</td><td>Zestawy</td></tr>
+            <tr><td>Kategoria</td><td>polskie kosmetyki naturalne, słowiańskie kosmetyki</td><td>Strona marki</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="mono" style="margin-top:12px;color:var(--muted)">Reklama na nazwę marki: sprawdzić Statystyki aukcji w Google Ads. Jeśli nikt nie licytuje „samarite”, przetestować niższy budżet przez 2–4 tygodnie i porównać łączną sprzedaż.</p>
+      <p class="mono" style="margin-top:12px;color:var(--muted)">Reklama na nazwę marki: Statystyki aukcji w Google Ads. Jeśli nikt nie licytuje „samarite”, przetestować niższy budżet przez 2–4 tygodnie i porównać łączną sprzedaż.</p>
     </div>
 
     <div class="risks">
       <div class="risk"><h5>Za dużo frontów naraz</h5><p>Zespół zrobi wszystko po trochu i nic dobrze. Stąd limit 3 filarów na kwartał.</p></div>
       <div class="risk"><h5>AI nie daje gwarancji</h5><p>Nawet wzorowe wykonanie nie zapewnia polecenia. Daje lepszą pozycję startową i mierzalny trend.</p></div>
-      <div class="risk"><h5>Decyzje należą do właścicielki</h5><p>Przekaz marki, rynki i polityka rabatów to wybory biznesowe. Audyt daje rekomendacje.</p></div>
+      <div class="risk"><h5>Decyzje należą do właścicielki</h5><p>Przekaz, rynki i rabaty to wybory biznesowe. Audyt daje rekomendacje.</p></div>
     </div>
   </section>
 
@@ -677,31 +707,31 @@ Brak alt: 25 z 52 zdjęć (/pl), 74 ze 131 (Divine Cream)</div>
     <div class="sec-head">
       <p class="eyebrow">Część 5</p>
       <h2 id="h-pomiar">Pomiar</h2>
-      <p class="lead">Bez punktu startowego nie da się udowodnić efektu. Stan dziś uzupełnia właścicielka z paneli, do których ma dostęp.</p>
+      <p class="lead">Stan dziś to punkt startowy. Brakujące wartości uzupełnia właścicielka z paneli, do których ma dostęp.</p>
     </div>
     <div class="tbl">
       <table>
         <thead><tr><th>Miernik</th><th>Źródło</th><th>Jak często</th><th>Stan dziś</th></tr></thead>
         <tbody>
+          <tr><td>Test AI: pytania o kategorię z Samarité</td><td>Test 8 pytań</td><td>Co miesiąc</td><td class="v">0 / 6</td></tr>
+          <tr><td>Test AI: pytania o markę ze sklepem samarite.eu</td><td>Test 8 pytań</td><td>Co miesiąc</td><td class="v">0 / 2</td></tr>
+          <tr><td>LCP strony głównej na telefonie</td><td>PageSpeed, Search Console</td><td>Po zmianie, potem co miesiąc</td><td class="v">14,1 s (lab.)</td></tr>
+          <tr><td>LCP karty Divine Cream na telefonie</td><td>PageSpeed, Search Console</td><td>Po zmianie, potem co miesiąc</td><td class="v">5,4 s (lab.)</td></tr>
           <tr><td>Przychód i liczba zamówień</td><td>Panel sklepu</td><td>Co tydzień</td><td class="v">do uzupełnienia</td></tr>
           <tr><td>Konwersja według urządzenia</td><td>GA4</td><td>Co tydzień</td><td class="v">do uzupełnienia</td></tr>
-          <tr><td>Średni koszyk</td><td>Panel sklepu, GA4</td><td>Co miesiąc</td><td class="v">do uzupełnienia</td></tr>
-          <tr><td>Udział powracających klientek</td><td>Panel sklepu, GA4</td><td>Co miesiąc</td><td class="v">do uzupełnienia</td></tr>
+          <tr><td>Średni koszyk i udział powracających</td><td>Panel sklepu, GA4</td><td>Co miesiąc</td><td class="v">do uzupełnienia</td></tr>
           <tr><td>Marża po rabatach i reklamie</td><td>Księgowość, Google Ads</td><td>Co miesiąc</td><td class="v">do uzupełnienia</td></tr>
-          <tr><td>LCP strony głównej na telefonie</td><td>PageSpeed, Search Console</td><td>Po zmianie, potem co miesiąc</td><td class="v">14,1 s (test lab.)</td></tr>
-          <tr><td>LCP karty Divine Cream na telefonie</td><td>PageSpeed, Search Console</td><td>Po zmianie, potem co miesiąc</td><td class="v">5,4 s (test lab.)</td></tr>
           <tr><td>Ruch bezpłatny i klikalność wyników</td><td>Search Console</td><td>Co miesiąc</td><td class="v">do uzupełnienia</td></tr>
           <tr><td>Kliknięcia z Zakupów Google</td><td>Merchant Center</td><td>Co miesiąc</td><td class="v">do uzupełnienia</td></tr>
-          <tr><td>Test widoczności w AI (15 pytań)</td><td>ChatGPT, Perplexity, Google</td><td>Co miesiąc</td><td class="v">nie zmierzono</td></tr>
         </tbody>
       </table>
     </div>
 
     <figure class="fig">
       <figcaption>
-        <p class="eyebrow">Test widoczności w AI</p>
-        <h3>Te same pytania co miesiąc</h3>
-        <p>Każde pytanie w nowej rozmowie, bez historii i bez zalogowania do konta, które zna markę. Zapisać datę, odpowiedź, cytowane źródła i wskazany sklep. Pojedyncza odpowiedź nie jest rankingiem; liczy się trend.</p>
+        <p class="eyebrow">Powtarzanie testu AI</p>
+        <h3>Te same 8 pytań co miesiąc</h3>
+        <p>W ChatGPT, Google i Claude, każde w nowej rozmowie, bez historii. Zapisać datę, czy pada Samarité, cytowane źródła i wskazany sklep. Liczy się trend, nie pojedyncza odpowiedź.</p>
       </figcaption>
       <ol class="qs">
         <li>Jaki krem do twarzy i pod oczy w jednym polecasz?</li>
@@ -711,9 +741,8 @@ Brak alt: 25 z 52 zdjęć (/pl), 74 ze 131 (Divine Cream)</div>
         <li>Słowiańskie kosmetyki: jaka marka jest warta uwagi?</li>
         <li>Czy Samarité Divine Cream jest dobry? Jakie są opinie?</li>
         <li>Naturalny krem do cery naczynkowej. Co polecasz?</li>
-        <li>Gdzie najlepiej kupić kosmetyki Samarité?</li>
+        <li>Gdzie kupić kosmetyki Samarité?</li>
       </ol>
-      <p class="mono" style="margin-top:12px;color:var(--muted)">Pozostałe 7 pytań: z realnych pytań klientek (konsultacje, DM, opinie).</p>
     </figure>
   </section>
 
@@ -724,41 +753,33 @@ Brak alt: 25 z 52 zdjęć (/pl), 74 ze 131 (Divine Cream)</div>
       <h2 id="h-metoda">Metoda, ograniczenia i źródła</h2>
     </div>
     <div class="method">
-      <div class="panel"><h3>Sprawdzone 23.10.2026</h3><ul><li>Kod stron: /pl, Divine Cream (oba warianty), Divine Elixir, Eksperci, Rytuały, Konsultacje, artykuł blogowy</li><li>robots.txt, sitemap.xml (320 adresów), llms.txt</li><li>Dane strukturalne schema.org</li><li>Lighthouse 12.2.1, emulacja telefonu</li><li>Dostęp z identyfikatorami botów</li><li>Wyszukiwanie: rankingi, opinie, konkurencja</li></ul></div>
-      <div class="panel"><h3>Nie sprawdzone</h3><ul><li>GA4, Search Console, Merchant Center, Google Ads</li><li>Panel sklepu, płatności, marża</li><li>Logi serwera</li><li>Wolumeny fraz</li><li>Odpowiedzi ChatGPT, Google AI i Perplexity</li></ul><p class="mono" style="margin-top:12px;color:var(--muted)">MB w raporcie = 1024 KiB.</p></div>
-      <div class="panel"><h3>Korekty wcześniejszych wersji</h3><ul><li>Cena Divine Cream w danych dla Google jest poprawna dla wybranego wariantu.</li><li>Wśród 4 największych filmów są 3 pliki .mov i 1 plik .mp4.</li><li>Zastępcza data w mapie strony dotyczy 56 z 320 adresów, nie wszystkich.</li><li>W kodzie karty produktu jest 10 pełnych opinii.</li><li>Uwzględniono drugą opinię (ChatGPT).</li></ul></div>
+      <div class="panel"><h3>Sprawdzone 23.10.2026</h3><ul><li>Test 8 pytań w wyszukiwarce AI Claude</li><li>Kod stron: /pl, Divine Cream (oba warianty), Divine Elixir, Eksperci, Rytuały, Konsultacje, blog</li><li>robots.txt, sitemap.xml (320 adresów), llms.txt, schema.org</li><li>Lighthouse 12.2.1, emulacja telefonu</li><li>Wyszukiwanie: rankingi, opinie, konkurencja</li></ul></div>
+      <div class="panel"><h3>Nie sprawdzone</h3><ul><li>Odpowiedzi ChatGPT, Google AI Overviews, Perplexity</li><li>GA4, Search Console, Merchant Center, Google Ads</li><li>Panel sklepu, płatności, marża</li><li>Logi serwera, wolumeny fraz</li></ul><p class="mono" style="margin-top:12px;color:var(--muted)">MB = 1024 KiB.</p></div>
+      <div class="panel"><h3>Korekty wcześniejszych wersji</h3><ul><li>Cena Divine Cream w danych dla Google jest poprawna dla wybranego wariantu.</li><li>Wśród 4 największych filmów: 3 pliki .mov i 1 .mp4.</li><li>Data zastępcza w mapie strony: 56 z 320 adresów.</li><li>W kodzie karty produktu jest 10 pełnych opinii.</li><li>Uwzględniono drugą opinię (ChatGPT).</li></ul></div>
     </div>
     <ul class="src">
-      <li><a href="https://samarite.eu/pl" target="_blank" rel="noopener">samarite.eu/pl</a></li>
-      <li><a href="https://samarite.eu/pl/product/divine-cream" target="_blank" rel="noopener">Divine Cream</a> · <a href="https://samarite.eu/pl/product/divine-cream?v=793" target="_blank" rel="noopener">wariant 45 ml</a></li>
+      <li><a href="https://samarite.eu/pl" target="_blank" rel="noopener">samarite.eu/pl</a> · <a href="https://samarite.eu/pl/product/divine-cream" target="_blank" rel="noopener">Divine Cream</a> · <a href="https://samarite.eu/pl/product/divine-cream?v=793" target="_blank" rel="noopener">45 ml</a></li>
       <li><a href="https://samarite.eu/pl/rytualy" target="_blank" rel="noopener">Rytuały</a> · <a href="https://samarite.eu/pl/experts" target="_blank" rel="noopener">Eksperci</a> · <a href="https://samarite.eu/pl/consultations" target="_blank" rel="noopener">Konsultacje</a></li>
       <li><a href="https://samarite.eu/robots.txt" target="_blank" rel="noopener">robots.txt</a> · <a href="https://samarite.eu/sitemap.xml" target="_blank" rel="noopener">sitemap.xml</a> · <a href="https://samarite.eu/llms.txt" target="_blank" rel="noopener">llms.txt</a></li>
-      <li><a href="https://wizaz.pl/kosmetyki/produkt,307802,samarite-divine-cream.html" target="_blank" rel="noopener">Wizaż: Divine Cream</a></li>
-      <li><a href="https://www.glamour.pl/uroda/przetestowalam-krem-ktory-sprzedaje-sie-w-polsce-co-7-minut/" target="_blank" rel="noopener">Glamour: krem co 7 minut</a></li>
-      <li><a href="https://www.elle.pl/uroda/najlepsze-kremy-nawilzajace-do-twarzy-od-polskich-marek-naturalnych-przeglad-i-opinie/" target="_blank" rel="noopener">Elle: polskie marki naturalne</a></li>
-      <li><a href="https://www.superpharm.pl/blog/naturalny-krem-do-twarzy-jaki-wybrac-polecane-produkty" target="_blank" rel="noopener">Superpharm: naturalne kremy</a></li>
-      <li><a href="https://natu.care/pl/kosmetyki/krem-do-twarzy" target="_blank" rel="noopener">natu.care: kremy do twarzy</a></li>
-      <li><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">Google: Web Vitals</a></li>
-      <li><a href="https://developers.google.com/search/docs/appearance/structured-data/product" target="_blank" rel="noopener">Google: dane produktów</a></li>
-      <li><a href="https://developers.google.com/search/blog/2024/02/product-variants" target="_blank" rel="noopener">Google: warianty produktów</a></li>
-      <li><a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener">Google: funkcje AI w wyszukiwarce</a></li>
-      <li><a href="https://support.google.com/merchants/answer/6098512?hl=pl" target="_blank" rel="noopener">Merchant Center: oceny produktów</a></li>
-      <li><a href="https://support.google.com/merchants/answer/6324461?hl=pl" target="_blank" rel="noopener">Merchant Center: GTIN</a></li>
-      <li><a href="https://prawakonsumenta.uokik.gov.pl/prawo-do-informacji/informacje-o-obnizkach-cen/" target="_blank" rel="noopener">UOKiK: informacje o obniżkach</a></li>
-      <li><a href="https://eur-lex.europa.eu/eli/reg/2013/655/oj" target="_blank" rel="noopener">Rozporządzenie (UE) 655/2013</a></li>
-      <li><a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener">OpenAI: boty</a> · <a href="https://docs.perplexity.ai/docs/resources/perplexity-crawlers" target="_blank" rel="noopener">Perplexity: boty</a></li>
+      <li>Test AI, źródła: <a href="https://rankingpro.pl/ranking-kremow-pod-oczy-2026/" target="_blank" rel="noopener">rankingpro.pl</a>, <a href="https://www.prorankingi.pl/rankingi/kosmetyki/krem-pod-oczy/" target="_blank" rel="noopener">prorankingi.pl</a>, <a href="https://fashionbiznes.pl/nowe-polskie-marki-kosmetyczne-ktore-warto-sledzic/" target="_blank" rel="noopener">fashionbiznes.pl</a>, <a href="https://www.notino.pl/pielegnacja-na-dzien-i-na-noc/" target="_blank" rel="noopener">notino.pl</a></li>
+      <li>Test AI, źródła: <a href="https://www.doz.pl/k/zestawy-prezentowe-5563" target="_blank" rel="noopener">doz.pl</a>, <a href="https://wizaz.pl/kosmetyki/marka-slavica" target="_blank" rel="noopener">wizaz.pl (Slavica)</a>, <a href="https://skinsort.com/products/samarite/divine-cream/dupes" target="_blank" rel="noopener">skinsort.com</a>, <a href="https://www.aplikuj.pl/pracodawca/373355/zeme-pharm/opinie" target="_blank" rel="noopener">aplikuj.pl</a></li>
+      <li><a href="https://wizaz.pl/kosmetyki/produkt,307802,samarite-divine-cream.html" target="_blank" rel="noopener">Wizaż: Divine Cream</a> · <a href="https://www.glamour.pl/uroda/przetestowalam-krem-ktory-sprzedaje-sie-w-polsce-co-7-minut/" target="_blank" rel="noopener">Glamour</a></li>
+      <li><a href="https://www.elle.pl/uroda/najlepsze-kremy-nawilzajace-do-twarzy-od-polskich-marek-naturalnych-przeglad-i-opinie/" target="_blank" rel="noopener">Elle</a> · <a href="https://www.superpharm.pl/blog/naturalny-krem-do-twarzy-jaki-wybrac-polecane-produkty" target="_blank" rel="noopener">Superpharm</a> · <a href="https://natu.care/pl/kosmetyki/krem-do-twarzy" target="_blank" rel="noopener">natu.care</a></li>
+      <li><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">Web Vitals</a> · <a href="https://developers.google.com/search/docs/appearance/structured-data/product" target="_blank" rel="noopener">Google: dane produktów</a> · <a href="https://developers.google.com/search/blog/2024/02/product-variants" target="_blank" rel="noopener">warianty</a></li>
+      <li><a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener">Google: funkcje AI</a> · <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener">OpenAI: boty</a> · <a href="https://docs.perplexity.ai/docs/resources/perplexity-crawlers" target="_blank" rel="noopener">Perplexity: boty</a></li>
+      <li><a href="https://support.google.com/merchants/answer/6098512?hl=pl" target="_blank" rel="noopener">Oceny produktów</a> · <a href="https://support.google.com/merchants/answer/6324461?hl=pl" target="_blank" rel="noopener">GTIN</a></li>
+      <li><a href="https://prawakonsumenta.uokik.gov.pl/prawo-do-informacji/informacje-o-obnizkach-cen/" target="_blank" rel="noopener">UOKiK: obniżki</a> · <a href="https://eur-lex.europa.eu/eli/reg/2013/655/oj" target="_blank" rel="noopener">Rozporządzenie 655/2013</a></li>
     </ul>
   </section>
 </div>
 </main>
 
 <footer>
-  <div class="wrap">Audyt przygotowany 23.10.2026 na podstawie publicznie dostępnej strony samarite.eu i źródeł zewnętrznych. Wyniki szybkości pochodzą z testu laboratoryjnego. Kwestie prawne wymagają potwierdzenia przez prawnika.</div>
+  <div class="wrap">Audyt przygotowany 23.10.2026 na podstawie publicznie dostępnej strony samarite.eu, testu w wyszukiwarce AI i źródeł zewnętrznych. Wyniki szybkości pochodzą z testu laboratoryjnego. Kwestie prawne wymagają potwierdzenia przez prawnika.</div>
 </footer>
 
 <script>
 (function(){
-  // 33 ticks for the 33 herbs around the rating
   var svg=document.getElementById('ring');
   if(svg){
     var ns='http://www.w3.org/2000/svg',cx=180,cy=180;
@@ -772,8 +793,7 @@ Brak alt: 25 z 52 zdjęć (/pl), 74 ze 131 (Divine Cream)</div>
       svg.appendChild(l);
     }
   }
-  // checklist persistence + progress
-  var KEY='samarite-plan-v3',state={};
+  var KEY='samarite-plan-v4',state={};
   try{state=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){state={}}
   var boxes=[].slice.call(document.querySelectorAll('.task input[type=checkbox]'));
   function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
@@ -790,7 +810,6 @@ Brak alt: 25 z 52 zdjęć (/pl), 74 ze 131 (Divine Cream)</div>
     x.addEventListener('change',function(){state[x.id]=x.checked;x.closest('.task').classList.toggle('done',x.checked);save();progress()});
   });
   progress();
-  // owner filter
   var chips=[].slice.call(document.querySelectorAll('.chip'));
   chips.forEach(function(c){
     c.addEventListener('click',function(){
