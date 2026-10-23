@@ -10,7 +10,7 @@ Cel marki: **jak najwięcej sprzedaży przez własny sklep samarite.eu**, lepsza
 
 **Najpoważniejsze znalezione problemy** (to nie jest ranking strat finansowych — ten wymaga danych sprzedażowych, patrz pkt 1):
 
-1. **Ciężkie filmy na stronie głównej** — w teście mobilnym pobrało się 11 plików .mov (13,7 MB), strona: wynik 35/100, główna treść po 14,1 s (test laboratoryjny).
+1. **Ciężkie filmy na stronie głównej** — w teście mobilnym pobrało się 12 plików wideo (19,4 MB, ok. 90% wagi strony), w tym wersje desktopowe; strona: wynik 35/100, główna treść po 14,1 s (test laboratoryjny).
 2. **„Najniższa cena z 30 dni: 0,00” przy zestawach** — wymaga pilnej korekty.
 3. **Dane produktów dla Google** — opis w danych strukturalnych to lista fraz, brak EAN w kodzie strony, jeden adres oferty dla różnych wariantów.
 
@@ -69,14 +69,14 @@ To diagnoza, która pokaże, gdzie sklep realnie traci pieniądze. Bez niej pozo
 
 | Strona | Wynik | Wczytanie głównej treści (LCP) | Waga | Blokada skryptów (TBT) |
 |---|---|---|---|---|
-| Strona główna /pl | 35/100 | 14,1 s | 21,9 MB | 3,2 s |
-| Divine Cream | 47/100 | 5,4 s | 9,7 MB | 0,9 s |
+| Strona główna /pl | 35/100 | 14,1 s | 21,4 MB | 3,2 s |
+| Divine Cream | 47/100 | 5,4 s | 9,4 MB | 0,9 s |
 
 Norma Google dla dobrego LCP: ≤ 2,5 s.
 
 **Co ustalono:**
 
-- W teście mobilnym pobrało się **11 żądań plików .mov — 13,7 MB**. Pliki źródłowe: `baner-bajka-1080x2400-cta` (6,1 MB), `film-o-marce-baner-desktop` (6,1 MB), `film-koe-desktop` (3,5 MB), `film-koe-mobile` (3,1 MB).
+- W teście mobilnym pobrało się **12 plików wideo — 19,4 MB** (ok. 90% wagi strony): `film-o-marce-baner-desktop.mov` (6,1 MB, wersja desktopowa), `baner-bajka-1080x2400-cta.mp4` (6,0 MB), `film-koe-desktop.mov` (3,6 MB, wersja desktopowa), `film-koe-mobile.mov` (3,4 MB). MB = 1024 KiB.
 - Odpowiedź serwera: 140 ms — **serwer nie jest przyczyną**.
 - Skrypty zewnętrzne (Google Tag Manager, gtag) blokują stronę na 1,15 s; ok. 450 KB nieużywanego JavaScriptu.
 - **Nie ustalono**, który element odpowiada za LCP — Lighthouse go nie wskazał. Dlatego nie da się z góry podać, ile sekund przyniesie sama optymalizacja filmów.
@@ -176,7 +176,7 @@ Wpływ na sprzedaż: pośredni (klikalność z Google) — mierzyć CTR w Search
 - **Organization:** na stronie głównej tylko LocalBusiness (butik). Organization (na blogu) ma opis po angielsku. Dodać na stronie głównej: name „Samarité”, alternateName „Samarite”, legalName „Zeme Pharm Anna Mrowińska”, polski opis, `sameAs` → Instagram, Facebook, TikTok, YouTube, profil na Wizaż.
 - **Niespójność:** foundingDate 2019 w danych vs „od 8 lat” w tekście strony głównej — ujednolicić.
 - **Eksperci:** literówka „eksperów Samaritè” → „ekspertów Samarité”; autor w danych artykułu: „mgr chemii\nBARBARA ZAPISEK -\nGŁÓWNY TECHNOLOG” → name „Barbara Zapisek”, jobTitle „Główny technolog”.
-- **sitemap.xml:** wszystkie adresy mają datę `2025-01-01` — generować prawdziwe daty zmian.
+- **sitemap.xml:** 56 z 320 adresów (m.in. strona główna, sklep, blog) ma zastępczą datę `2025-01-01` — generować prawdziwe daty zmian.
 
 ## 12. Widoczność w AI (ChatGPT, Google AI, Perplexity) — P2/P3
 
@@ -246,6 +246,8 @@ Dystrybucja: perfumeria.pl ma 2 produkty Samarité (oba niedostępne); marka jes
 - Google, UOKiK, EUR-Lex, OpenAI, Perplexity — linki w odpowiednich sekcjach.
 
 # Zmiany względem wersji 1
+
+- Wersja 2.1: poprawione dane o filmach (3 pliki .mov i 1 .mp4 wśród największych; 19,4 MB wideo), wagi stron w MB (1024 KiB) oraz zakres zastępczej daty w mapie strony (56 z 320 adresów).
 
 - Wycofano zarzut „błędnej ceny Divine Cream” — cena w danych odpowiada wybranemu wariantowi (Grand 269,99 zł / 45 ml 149,99 zł). Pozostaje problem wspólnego adresu oferty dla wariantów.
 - „3 największe straty” → „najpoważniejsze znalezione problemy” (bez danych sprzedażowych nie da się ustalić strat).
