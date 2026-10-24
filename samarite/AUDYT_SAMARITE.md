@@ -207,6 +207,10 @@ Wpływ na sprzedaż: pośredni (klikalność z Google) — mierzyć CTR w Search
 
 Źródła: [Google — AI features](https://developers.google.com/search/docs/appearance/ai-features), [OpenAI — boty](https://developers.openai.com/api/docs/bots), [Perplexity — boty](https://docs.perplexity.ai/docs/resources/perplexity-crawlers)
 
+# Test widoczności w AI
+
+24.10.2026 zadaliśmy 10 pytań, w których Samarité powinno być polecone (krem do twarzy i pod oczy, jeden krem zamiast kilku, polskie marki naturalne premium, słowiańskie kosmetyki, esencja zamiast kroków koreańskiej pielęgnacji, balsam do twarzy i ciała, prezent, ciąża, krem dla mężczyzny). W ChatGPT i w Gemini marka nie padła ani razu (**0 na 20 odpowiedzi**); we wcześniejszym teście w wyszukiwarce AI Claude — 0 na 6 pytań o kategorię, a na pytanie „gdzie kupić” nie wskazano samarite.eu. Najczęściej polecane były **Mokosh (7 z 20)** i **BasicLab (5 z 20)**, dalej Ministerstwo Dobrego Mydła, Resibo, Vianek i Hagi; Gemini częściej sięgało po marki apteczne i zagraniczne (CeraVe, La Roche-Posay, Embryolisse). Najbardziej bolą przegrane w pytaniach, które opisują produkty Samarité niemal dosłownie: Divine Cream, Divine Elixir i Supreme Balm. Mokosh zajmuje w AI tę samą pozycję, której szuka Samarité (polska marka premium, naturalna, słowiańska), a BasicLab wygrywa rzeczowym opisem składników i zastosowań.
+
 # Frazy kluczowe — kandydaci do weryfikacji
 
 To **nie jest potwierdzona lista szans**. Najpierw sprawdzić w Search Console zapytania, które już dają wyświetlenia, wejścia i zakupy, a wolumeny nowych fraz w Planerze słów kluczowych.
