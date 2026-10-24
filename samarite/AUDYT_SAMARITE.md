@@ -54,7 +54,7 @@ To diagnoza, która pokaże, gdzie sklep realnie traci pieniądze. Bez niej pozo
 
 ## 2. Cena „Najniższa cena z 30 dni: 0,00” — P1
 
-- **Gdzie:** zestawy Mini Basic Set, Holy Grail Set, Anti-Aging Set, Ready to Go Set, All Set (strona główna i sekcje „W zestawie” na kartach produktów).
+- **Gdzie:** 8 zestawów na /pl/shop/sets: Mini Basic Set, Holy Grail Set, Anti-Aging Set, Supreme Gift Set, Supreme Help Kit, Longevity Set, Ready to Go Set, All Set; także strona główna („Zestawy prezentowe”) i sekcje „Dostępny w zestawie” na kartach produktów. Produkty pojedyncze mają poprawne wartości.
 - **Co zrobić:**
   - Sprawdzić historię cen każdego zestawu i rodzaj komunikacji (obniżka ceny zestawu czy porównanie z sumą produktów kupowanych osobno).
   - Jeśli to obniżka — pokazać rzeczywistą najniższą cenę z 30 dni przed obniżką.
