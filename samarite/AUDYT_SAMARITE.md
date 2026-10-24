@@ -211,6 +211,17 @@ Wpływ na sprzedaż: pośredni (klikalność z Google) — mierzyć CTR w Search
 
 24.10.2026 zadaliśmy 10 pytań, w których Samarité powinno być polecone (krem do twarzy i pod oczy, jeden krem zamiast kilku, polskie marki naturalne premium, słowiańskie kosmetyki, esencja zamiast kroków koreańskiej pielęgnacji, balsam do twarzy i ciała, prezent, ciąża, krem dla mężczyzny). W ChatGPT i w Gemini marka nie padła ani razu (**0 na 20 odpowiedzi**); we wcześniejszym teście w wyszukiwarce AI Claude — 0 na 6 pytań o kategorię, a na pytanie „gdzie kupić” nie wskazano samarite.eu. Najczęściej polecane były **Mokosh (7 z 20)** i **BasicLab (5 z 20)**, dalej Ministerstwo Dobrego Mydła, Resibo, Vianek i Hagi; Gemini częściej sięgało po marki apteczne i zagraniczne (CeraVe, La Roche-Posay, Embryolisse). Najbardziej bolą przegrane w pytaniach, które opisują produkty Samarité niemal dosłownie: Divine Cream, Divine Elixir i Supreme Balm. Mokosh zajmuje w AI tę samą pozycję, której szuka Samarité (polska marka premium, naturalna, słowiańska), a BasicLab wygrywa rzeczowym opisem składników i zastosowań.
 
+# Uzupełnienie 24.10.2026 (sprawdzone na żywej stronie)
+
+- **„Najniższa cena z 30 dni: 0,00” jest widoczna dla klientek** przy 9 zestawach (Mini Basic, Holy Grail, Anti-Aging, Supreme Gift, Supreme Help Kit, Longevity, Ready to Go, All Set, Angel Hair Set) oraz przy 2 produktach (Divine Anti-Wrinkle Booster, Supreme Balm Stick).
+- **Dane dla Google niezgodne ze sklepem:** dostawa w danych produktów 0 zł i 0–1 dzień obsługi; w sklepie 20 zł (pobranie 25 zł), darmowa od 250 zł, realizacja ok. 2 dni robocze. Mini Basic Set: pusty opis i ocena „0 z 0 opinii”.
+- **Teksty robocze zamiast opisów zdjęć:** „TODO: Add alt text…” (15× na stronie głównej, 24× na Mini Basic). Puste opisy: 25/52 zdjęć na stronie głównej, 73/128 na karcie Divine Cream.
+- **Karta Divine Cream 45 ml:** mylący komunikat „Kosmetyk o pojemności 90 ml jest aktualnie niedostępny…”.
+- **llms.txt wskazuje 5 nieistniejących stron** (/pl/visit-us, /pl/page/polityka-prywatnosci, /pl/page/regulamin, Divine Skin Perfector SPF50, Mini Bestseller Set). Strony „Not Found” zwracają kod 200 (miękkie 404).
+- **Zakup działa:** karta → koszyk → kasa bez błędów; zakup bez konta, faktura, walidacja pól. Kod TRIO: 3× Divine Cream 45 ml za 400 zł (bez kodu 449,97 zł).
+- **Drugi test AI** (ChatGPT i Tryb AI Google, 4 pytania z prośbą o linki): **0 na 8**. Polecano m.in. Avène, Dr Irenę Eris, CeraVe, BasicLab, Bielendę Professional, Mokosh, Resibo, IOSSI, Ministerstwo. Perplexity wymagał logowania — test niezaliczony.
+- **PageSpeed (24.10):** strona główna — dane użytkowników bez zmian (LCP 1,6 s, INP 219 ms, CLS 0,14); waga 36,1 MB, w tym wideo 34,1 MB; brak długiego cache plików (ok. 27 MB do zaoszczędzenia). Karta Divine Cream — LCP 1,9 s, INP 230 ms, CLS 0,08; wykonanie JavaScript 1,8 s.
+
 # Frazy kluczowe — kandydaci do weryfikacji
 
 To **nie jest potwierdzona lista szans**. Najpierw sprawdzić w Search Console zapytania, które już dają wyświetlenia, wejścia i zakupy, a wolumeny nowych fraz w Planerze słów kluczowych.
